@@ -1,0 +1,150 @@
+/*
+1. Download the files and upload them in HDFS under the 'HV/Question2/input' directory.
+*/
+
+
+ls -a
+hadoop fs -ls
+hadoop fs -mkdir /HV
+hadoop fs -mkdir /HV/Question2
+hadoop fs -mkdir /HV/Question2/input
+
+hadoop fs -copyFromLocal CleaningAssignment.txt /HV/Question2/input
+hadoop fs -copyFromLocal Client.txt /HV/Question2/input
+hadoop fs -copyFromLocal ClientBooking.txt /HV/Question2/input
+hadoop fs -copyFromLocal Employee.txt /HV/Question2/input
+hadoop fs -copyFromLocal Hotel.txt /HV/Question2/input
+hadoop fs -copyFromLocal Manager.txt /HV/Question2/input
+hadoop fs -copyFromLocal Repair.txt /HV/Question2/input
+hadoop fs -copyFromLocal Technician.txt /HV/Question2/input
+
+hadoop fs -ls /HV/Question2/input
+
+hive
+
+
+/*
+2. Create a database named 'Hotel_db' and create the eight tables
+---to drop it if needed DROP DATABASE Hotel_db CASCADE;---
+*/
+
+
+CREATE DATABASE Hotel_db;
+
+
+CREATE TABLE IF NOT EXISTS Hotel_db.CleaningAssignment(building_id String, apt_no int, employee_id int) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+
+
+CREATE TABLE IF NOT EXISTS Hotel_db.Client(client_id String, client_name String, client_industry String , client_location String, referred_by_client String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+
+CREATE TABLE IF NOT EXISTS Hotel_db.ClientBooking(building_id String ,apt_no int, apt_no_of_bedrooms String, client_id String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+
+
+CREATE TABLE IF NOT EXISTS Hotel_db.Employee(employee_id String, employee_name String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+
+
+
+CREATE TABLE IF NOT EXISTS Hotel_db.Hotel(building_id String, no_of_floors int, manager_id String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+
+
+CREATE TABLE IF NOT EXISTS Hotel_db.Manager(manager_id String, manager_firstname	 String, manager_lastname String, manager_yob int, manager_salary float, manager_bonus float, manager_resbuilding_id String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+
+CREATE TABLE IF NOT EXISTS Hotel_db.Repair(technician_id String, building_id String, year_last int, year_next int) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+
+CREATE TABLE IF NOT EXISTS Hotel_db.Technician(technician_id String,	technician_name String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+
+USE Hotel_db;
+SHOW TABLES;
+
+
+/*
+3. Load data from HDFS into each table respectively
+*/
+
+LOAD DATA  LOCAL INPATH './CleaningAssignment.txt' OVERWRITE INTO TABLE cleaningassignment;
+LOAD DATA  LOCAL INPATH './Client.txt' OVERWRITE INTO TABLE client;
+LOAD DATA  LOCAL INPATH './ClientBooking.txt' OVERWRITE INTO TABLE clientbooking;
+LOAD DATA  LOCAL INPATH './Employee.txt' OVERWRITE INTO TABLE employee;
+LOAD DATA  LOCAL INPATH './Hotel.txt' OVERWRITE INTO TABLE hotel;
+LOAD DATA  LOCAL INPATH './Manager.txt' OVERWRITE INTO TABLE manager;
+LOAD DATA  LOCAL INPATH './Repair.txt' OVERWRITE INTO TABLE repair;
+LOAD DATA  LOCAL INPATH './Technician.txt' OVERWRITE INTO TABLE technician;
+
+
+
+/*
+4. Display the manager number, first name, and last name for all managers (these data belong to the manager, not employee).
+*/
+
+SELECT manager_id, manager_firstname, manager_lastname FROM manager;
+
+
+
+
+/*
+5. Display the client id, name, and industry for all clients.
+*/
+
+SELECT client_id, client_name, client_industry FROM client;
+
+
+/*
+6. Display the hotel building id, the number of floors, and the manager's first name and last name for all hotels.
+*/
+
+SELECT building_id, no_of_floors , manager_firstname, manager_lastname FROM hotel JOIN manager ON hotel.manager_id = manager.manager_id;
+
+
+
+/*
+
+7. Display the manager's first and last name, as well as salary, date of birth, and the number of hotel buildings that the manager manages for all managers with a salary higher than $40,000.
+*/
+
+SELECT manager_firstname , manager_lastname, manager_salary , manager_yob , COUNT(building_id) as total_hotels FROM manager JOIN hotel ON hotel.manager_id = manager.manager_id WHERE manager_salary>40000 GROUP BY manager_firstname , manager_lastname, manager_salary , manager_yob;
+
+
+/*
+
+8. Display the hotel building id and the room numbers for all the rooms booked by a client named John.
+*/
+
+ SELECT building_id , apt_no FROM clientbooking JOIN client ON clientbooking.client_id = client.client_id WHERE  client_name = 'John' GROUP BY building_id , apt_no;
+
+
+
+/*
+9. Display the technician name and building id for each repair that is made in 2018.
+*/
+
+
+SELECT technician_name, building_id FROM technician JOIN repair ON technician.technician_id = repair.technician_id WHERE year_last=2018 OR year_next=2018;
+
+
+
+/*
+10. Display employee number and employee name of employees cleaning apartments that have more than one room in Chicago.
+*/
+
+SELECT employee.employee_id, employee_name, COUNT(employee.employee_id) as total_hotels FROM employee , cleaningassignment, clientbooking WHERE employee.employee_id = cleaningassignment.employee_id AND cleaningassignment.building_id=clientbooking.building_id AND clientbooking.apt_no_of_bedrooms>=2 GROUP BY employee.employee_id, employee_name ORDER BY total_hotels DESC;
+
+
+/*
+11. Display the client name of the client and the client name of the client who referred it.
+*/
+
+select client1.client_name,client2.client_name from client client1, client client2 where client1.referred_by_client = client2.client_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

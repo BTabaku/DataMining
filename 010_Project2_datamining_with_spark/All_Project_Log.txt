@@ -1,0 +1,506 @@
+[hadoop@ip-172-31-66-54 ~]$ hadoop fs -mkdir /SPRK_root
+[hadoop@ip-172-31-66-54 ~]$ hadoop fs -mkdir /SPRK_root/input
+
+[hadoop@ip-172-31-66-54 ~]$ hadoop fs -copyFromLocal movies.csv /SPRK_root/input
+
+[hadoop@ip-172-31-66-54 ~]$ hadoop fs -copyFromLocal ratings.csv /SPRK_root/input
+
+[hadoop@ip-172-31-66-54 ~]$ hadoop fs -ls /SPRK_root/input
+Found 2 items
+-rw-r--r--   1 hadoop hadoop    7164705 2020-06-20 13:38 /SPRK_root/input/movies.csv
+-rw-r--r--   1 hadoop hadoop    2957926 2020-06-20 13:38 /SPRK_root/input/ratings.csv
+[hadoop@ip-172-31-66-54 ~]$
+[hadoop@ip-172-31-66-54 ~]$
+[hadoop@ip-172-31-66-54 ~]$
+[hadoop@ip-172-31-66-54 ~]$
+[hadoop@ip-172-31-66-54 ~]$ spark-submit IBDM_movies.py /SPRK_root/input/movies.csv /SPRK_root/input/ratings.csv /SPRK_root
+20/06/20 13:39:02 INFO SparkContext: Running Spark version 2.4.5-amzn-0
+20/06/20 13:39:02 INFO SparkContext: Submitted application: IBDM_movies.py
+20/06/20 13:39:02 INFO SecurityManager: Changing view acls to: hadoop
+20/06/20 13:39:02 INFO SecurityManager: Changing modify acls to: hadoop
+20/06/20 13:39:02 INFO SecurityManager: Changing view acls groups to:
+20/06/20 13:39:02 INFO SecurityManager: Changing modify acls groups to:
+20/06/20 13:39:02 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hadoop); groups with view permissions: Set(); users  with modify permissions: Set(hadoop); groups with modify permissions: Set()
+20/06/20 13:39:03 INFO Utils: Successfully started service 'sparkDriver' on port 36903.
+20/06/20 13:39:03 INFO SparkEnv: Registering MapOutputTracker
+20/06/20 13:39:03 INFO SparkEnv: Registering BlockManagerMaster
+20/06/20 13:39:03 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+20/06/20 13:39:03 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+20/06/20 13:39:03 INFO DiskBlockManager: Created local directory at /mnt/tmp/blockmgr-d82d3875-f35f-4a0c-bd3d-42902ae2d45f
+20/06/20 13:39:03 INFO MemoryStore: MemoryStore started with capacity 1028.8 MB
+20/06/20 13:39:03 INFO SparkEnv: Registering OutputCommitCoordinator
+20/06/20 13:39:03 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+20/06/20 13:39:03 INFO SparkUI: Bound SparkUI to 0.0.0.0, and started at http://ip-172-31-66-54.ec2.internal:4040
+20/06/20 13:39:03 INFO Utils: Using initial executors = 50, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+20/06/20 13:39:04 INFO RMProxy: Connecting to ResourceManager at ip-172-31-66-54.ec2.internal/172.31.66.54:8032
+20/06/20 13:39:04 INFO Client: Requesting a new application from cluster with 2 NodeManagers
+20/06/20 13:39:04 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (12288 MB per container)
+20/06/20 13:39:04 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+20/06/20 13:39:04 INFO Client: Setting up container launch context for our AM
+20/06/20 13:39:04 INFO Client: Setting up the launch environment for our AM container
+20/06/20 13:39:04 INFO Client: Preparing resources for our AM container
+20/06/20 13:39:04 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+20/06/20 13:39:06 INFO Client: Uploading resource file:/mnt/tmp/spark-373377a8-4274-45ba-8f44-2b5f37fe2898/__spark_libs__2637170754383948704.zip -> hdfs://ip-172-31-66-54.ec2.internal:8020/user/hadoop/.sparkStaging/application_1592659208339_0004/__spark_libs__2637170754383948704.zip
+20/06/20 13:39:07 INFO Client: Uploading resource file:/usr/lib/spark/python/lib/pyspark.zip -> hdfs://ip-172-31-66-54.ec2.internal:8020/user/hadoop/.sparkStaging/application_1592659208339_0004/pyspark.zip
+20/06/20 13:39:07 INFO Client: Uploading resource file:/usr/lib/spark/python/lib/py4j-0.10.7-src.zip -> hdfs://ip-172-31-66-54.ec2.internal:8020/user/hadoop/.sparkStaging/application_1592659208339_0004/py4j-0.10.7-src.zip
+20/06/20 13:39:07 INFO Client: Uploading resource file:/mnt/tmp/spark-373377a8-4274-45ba-8f44-2b5f37fe2898/__spark_conf__6029369670209245753.zip -> hdfs://ip-172-31-66-54.ec2.internal:8020/user/hadoop/.sparkStaging/application_1592659208339_0004/__spark_conf__.zip
+20/06/20 13:39:07 INFO SecurityManager: Changing view acls to: hadoop
+20/06/20 13:39:07 INFO SecurityManager: Changing modify acls to: hadoop
+20/06/20 13:39:07 INFO SecurityManager: Changing view acls groups to:
+20/06/20 13:39:07 INFO SecurityManager: Changing modify acls groups to:
+20/06/20 13:39:07 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users  with view permissions: Set(hadoop); groups with view permissions: Set(); users  with modify permissions: Set(hadoop); groups with modify permissions: Set()
+20/06/20 13:39:08 INFO Client: Submitting application application_1592659208339_0004 to ResourceManager
+20/06/20 13:39:08 INFO YarnClientImpl: Submitted application application_1592659208339_0004
+20/06/20 13:39:08 INFO SchedulerExtensionServices: Starting Yarn extension services with app application_1592659208339_0004 and attemptId None
+20/06/20 13:39:09 INFO Client: Application report for application_1592659208339_0004 (state: ACCEPTED)
+20/06/20 13:39:09 INFO Client:
+         client token: N/A
+         diagnostics: AM container is launched, waiting for AM container to Register with RM
+         ApplicationMaster host: N/A
+         ApplicationMaster RPC port: -1
+         queue: default
+         start time: 1592660348733
+         final status: UNDEFINED
+         tracking URL: http://ip-172-31-66-54.ec2.internal:20888/proxy/application_1592659208339_0004/
+         user: hadoop
+20/06/20 13:39:10 INFO Client: Application report for application_1592659208339_0004 (state: ACCEPTED)
+20/06/20 13:39:11 INFO Client: Application report for application_1592659208339_0004 (state: ACCEPTED)
+20/06/20 13:39:12 INFO Client: Application report for application_1592659208339_0004 (state: RUNNING)
+20/06/20 13:39:12 INFO Client:
+         client token: N/A
+         diagnostics: N/A
+         ApplicationMaster host: 172.31.77.172
+         ApplicationMaster RPC port: -1
+         queue: default
+         start time: 1592660348733
+         final status: UNDEFINED
+         tracking URL: http://ip-172-31-66-54.ec2.internal:20888/proxy/application_1592659208339_0004/
+         user: hadoop
+20/06/20 13:39:12 INFO YarnClientSchedulerBackend: Application application_1592659208339_0004 has started running.
+20/06/20 13:39:12 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 42859.
+20/06/20 13:39:12 INFO NettyBlockTransferService: Server created on ip-172-31-66-54.ec2.internal:42859
+20/06/20 13:39:12 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+20/06/20 13:39:12 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> ip-172-31-66-54.ec2.internal, PROXY_URI_BASES -> http://ip-172-31-66-54.ec2.internal:20888/proxy/application_1592659208339_0004), /proxy/application_1592659208339_0004
+20/06/20 13:39:12 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, ip-172-31-66-54.ec2.internal, 42859, None)
+20/06/20 13:39:12 INFO BlockManagerMasterEndpoint: Registering block manager ip-172-31-66-54.ec2.internal:42859 with 1028.8 MB RAM, BlockManagerId(driver, ip-172-31-66-54.ec2.internal, 42859, None)
+20/06/20 13:39:12 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, ip-172-31-66-54.ec2.internal, 42859, None)
+20/06/20 13:39:12 INFO BlockManager: external shuffle service port = 7337
+20/06/20 13:39:12 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, ip-172-31-66-54.ec2.internal, 42859, None)
+20/06/20 13:39:12 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+20/06/20 13:39:12 INFO JettyUtils: Adding filter org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter to /metrics/json.
+20/06/20 13:39:13 INFO EventLoggingListener: Logging events to hdfs:/var/log/spark/apps/application_1592659208339_0004
+20/06/20 13:39:13 INFO Utils: Using initial executors = 50, max of spark.dynamicAllocation.initialExecutors, spark.dynamicAllocation.minExecutors and spark.executor.instances
+20/06/20 13:39:13 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+root
+ |-- imdb_title_id: string (nullable = true)
+ |-- title: string (nullable = true)
+ |-- original_title: string (nullable = true)
+ |-- year: integer (nullable = true)
+ |-- date_published: string (nullable = true)
+ |-- genre: string (nullable = true)
+ |-- duration: integer (nullable = true)
+ |-- avg_vote: float (nullable = true)
+ |-- votes: integer (nullable = true)
+
++-------------+--------------------+--------------------+----+--------------+--------------------+--------+--------+-----+
+|imdb_title_id|               title|      original_title|year|date_published|               genre|duration|avg_vote|votes|
++-------------+--------------------+--------------------+----+--------------+--------------------+--------+--------+-----+
+|    tt0000574|The Story of the ...|The Story of the ...|1906|    12/26/1906|Biography, Crime,...|      70|     6.1|  537|
+|    tt0001892|      Den sorte drøm|      Den sorte drøm|1911|     8/19/1911|               Drama|      53|     5.9|  171|
+|    tt0002101|           Cleopatra|           Cleopatra|1912|    11/13/1912|      Drama, History|     100|     5.2|  420|
+|    tt0002130|           L'Inferno|           L'Inferno|1911|      3/6/1911|Adventure, Drama,...|      68|     7.0| 2019|
+|    tt0002199|From the Manger t...|From the Manger t...|1912|          1913|    Biography, Drama|      60|     5.7|  438|
+|    tt0002423|      Madame DuBarry|      Madame DuBarry|1919|    11/26/1919|Biography, Drama,...|      85|     6.8|  709|
+|    tt0002445|          Quo Vadis?|          Quo Vadis?|1913|      3/1/1913|      Drama, History|     120|     6.2|  241|
+|    tt0002452|Independenta Roma...|Independenta Roma...|1912|      9/1/1912|        History, War|     120|     6.7|  187|
+|    tt0002461|         Richard III|         Richard III|1912|    10/15/1912|               Drama|      55|     5.5|  211|
+|    tt0002646|            Atlantis|            Atlantis|1913|    12/26/1913|               Drama|     121|     6.7|  310|
+|    tt0002844|Fantômas - À l'om...|Fantômas - À l'om...|1913|     5/12/1913|        Crime, Drama|      54|     7.0| 1853|
+|    tt0003014|       Ingeborg Holm|       Ingeborg Holm|1913|    10/27/1913|               Drama|      96|     7.1|  888|
+|    tt0003037|Juve contre Fantômas|Juve contre Fantômas|1913|      9/8/1913|        Crime, Drama|      61|     7.0| 1295|
+|    tt0003131|Maudite soit la g...|Maudite soit la g...|1914|      5/1/1914|          Drama, War|      50|     6.7|  112|
+|    tt0003165|     Le mort qui tue|     Le mort qui tue|1913|     11/6/1913|Crime, Drama, Mys...|      90|     7.0| 1000|
+|    tt0003167|    Home, Sweet Home|    Home, Sweet Home|1914|     5/17/1914|               Drama|      55|     5.7|  170|
+|    tt0003419|Der Student von Prag|Der Student von Prag|1913|     8/22/1913|Drama, Fantasy, H...|      85|     6.5| 1645|
+|    tt0003471|    Traffic in Souls|    Traffic in Souls|1913|    11/24/1913|        Crime, Drama|      88|     6.1|  527|
+|    tt0003489|Gli ultimi giorni...|Gli ultimi giorni...|1913|     8/24/1913|    Adventure, Drama|      88|     6.2|  458|
+|    tt0003637|       Assunta Spina|       Assunta Spina|1915|      5/1/1916|               Drama|      72|     6.5|  357|
++-------------+--------------------+--------------------+----+--------------+--------------------+--------+--------+-----+
+only showing top 20 rows
+
+root
+ |-- imdb_title_id: string (nullable = true)
+ |-- weighted_average_vote: float (nullable = true)
+ |-- total_votes: integer (nullable = true)
+ |-- mean_vote: float (nullable = true)
+ |-- median_vote: integer (nullable = true)
+ |-- males_allages_avg_vote: float (nullable = true)
+ |-- females_allages_avg_vote: float (nullable = true)
+ |-- top1000_voters_rating: float (nullable = true)
+ |-- opinion_diff: float (nullable = true)
+
++-------------+---------------------+-----------+---------+-----------+----------------------+------------------------+---------------------+------------+
+|imdb_title_id|weighted_average_vote|total_votes|mean_vote|median_vote|males_allages_avg_vote|females_allages_avg_vote|top1000_voters_rating|opinion_diff|
++-------------+---------------------+-----------+---------+-----------+----------------------+------------------------+---------------------+------------+
+|    tt0000574|                  6.1|        537|      6.3|          6|                   6.1|                     6.1|                  6.3|         0.0|
+|    tt0001892|                  5.9|        171|      6.1|          6|                   6.0|                     5.7|                  5.9|   0.3000002|
+|    tt0002101|                  5.2|        420|      5.2|          5|                   5.0|                     5.8|                  4.9|  -0.8000002|
+|    tt0002130|                  7.0|       2019|      6.9|          7|                   7.0|                     7.2|                  7.0| -0.19999981|
+|    tt0002199|                  5.7|        438|      5.8|          6|                   5.8|                     5.4|                  5.7|   0.4000001|
+|    tt0002423|                  6.8|        709|      6.8|          7|                   6.7|                     7.4|                  6.3|  -0.7000003|
+|    tt0002445|                  6.2|        241|      6.2|          6|                   6.2|                     6.1|                  5.6| 0.099999905|
+|    tt0002452|                  6.7|        187|      7.1|          7|                   6.7|                     6.7|                  5.3|         0.0|
+|    tt0002461|                  5.5|        211|      5.4|          6|                   5.5|                     6.5|                  5.3|        -1.0|
+|    tt0002646|                  6.7|        310|      6.6|          7|                   6.6|                     7.0|                  6.3|  -0.4000001|
+|    tt0002844|                  7.0|       1853|      6.6|          7|                   6.9|                     7.5|                  6.7|  -0.5999999|
+|    tt0003014|                  7.1|        888|      7.2|          7|                   7.0|                     7.5|                  6.9|        -0.5|
+|    tt0003037|                  7.0|       1295|      6.5|          7|                   6.9|                     7.2|                  6.7|  -0.2999997|
+|    tt0003131|                  6.7|        112|      6.9|          7|                   6.7|                     6.3|                  6.8|  0.39999962|
+|    tt0003165|                  7.0|       1000|      6.6|          7|                   6.9|                     7.5|                  6.6|  -0.5999999|
+|    tt0003167|                  5.7|        170|      6.0|          6|                   5.6|                     5.6|                  5.4|         0.0|
+|    tt0003419|                  6.5|       1645|      6.5|          7|                   6.5|                     6.7|                  6.2| -0.19999981|
+|    tt0003471|                  6.1|        527|      6.1|          6|                   6.0|                     6.4|                  5.9|  -0.4000001|
+|    tt0003489|                  6.2|        458|      6.1|          6|                   6.2|                     6.1|                  6.2| 0.099999905|
+|    tt0003637|                  6.5|        357|      6.6|          7|                   6.4|                     7.0|                  6.2|  -0.5999999|
++-------------+---------------------+-----------+---------+-----------+----------------------+------------------------+---------------------+------------+
+only showing top 20 rows
+
++-------------+--------------------+--------------------+----+--------------+--------------------+--------+--------+-----+
+|imdb_title_id|               title|      original_title|year|date_published|               genre|duration|avg_vote|votes|
++-------------+--------------------+--------------------+----+--------------+--------------------+--------+--------+-----+
+|    tt0000574|The Story of the ...|The Story of the ...|1906|    12/26/1906|Biography, Crime,...|      70|     6.1|  537|
+|    tt0001892|      Den sorte drøm|      Den sorte drøm|1911|     8/19/1911|               Drama|      53|     5.9|  171|
+|    tt0002101|           Cleopatra|           Cleopatra|1912|    11/13/1912|      Drama, History|     100|     5.2|  420|
+|    tt0002130|           L'Inferno|           L'Inferno|1911|      3/6/1911|Adventure, Drama,...|      68|     7.0| 2019|
+|    tt0002199|From the Manger t...|From the Manger t...|1912|          1913|    Biography, Drama|      60|     5.7|  438|
+|    tt0002423|      Madame DuBarry|      Madame DuBarry|1919|    11/26/1919|Biography, Drama,...|      85|     6.8|  709|
+|    tt0002445|          Quo Vadis?|          Quo Vadis?|1913|      3/1/1913|      Drama, History|     120|     6.2|  241|
+|    tt0002452|Independenta Roma...|Independenta Roma...|1912|      9/1/1912|        History, War|     120|     6.7|  187|
+|    tt0002461|         Richard III|         Richard III|1912|    10/15/1912|               Drama|      55|     5.5|  211|
+|    tt0002646|            Atlantis|            Atlantis|1913|    12/26/1913|               Drama|     121|     6.7|  310|
++-------------+--------------------+--------------------+----+--------------+--------------------+--------+--------+-----+
+only showing top 10 rows
+
++-------------+---------------------+-----------+---------+-----------+----------------------+------------------------+---------------------+------------+
+|imdb_title_id|weighted_average_vote|total_votes|mean_vote|median_vote|males_allages_avg_vote|females_allages_avg_vote|top1000_voters_rating|opinion_diff|
++-------------+---------------------+-----------+---------+-----------+----------------------+------------------------+---------------------+------------+
+|    tt0000574|                  6.1|        537|      6.3|          6|                   6.1|                     6.1|                  6.3|         0.0|
+|    tt0001892|                  5.9|        171|      6.1|          6|                   6.0|                     5.7|                  5.9|   0.3000002|
+|    tt0002101|                  5.2|        420|      5.2|          5|                   5.0|                     5.8|                  4.9|  -0.8000002|
+|    tt0002130|                  7.0|       2019|      6.9|          7|                   7.0|                     7.2|                  7.0| -0.19999981|
+|    tt0002199|                  5.7|        438|      5.8|          6|                   5.8|                     5.4|                  5.7|   0.4000001|
+|    tt0002423|                  6.8|        709|      6.8|          7|                   6.7|                     7.4|                  6.3|  -0.7000003|
+|    tt0002445|                  6.2|        241|      6.2|          6|                   6.2|                     6.1|                  5.6| 0.099999905|
+|    tt0002452|                  6.7|        187|      7.1|          7|                   6.7|                     6.7|                  5.3|         0.0|
+|    tt0002461|                  5.5|        211|      5.4|          6|                   5.5|                     6.5|                  5.3|        -1.0|
+|    tt0002646|                  6.7|        310|      6.6|          7|                   6.6|                     7.0|                  6.3|  -0.4000001|
++-------------+---------------------+-----------+---------+-----------+----------------------+------------------------+---------------------+------------+
+only showing top 10 rows
+
++-------------+--------------------+--------------------+----+--------+
+|imdb_title_id|               title|               genre|year|duration|
++-------------+--------------------+--------------------+----+--------+
+|    tt0011131|Dr. Jekyll and Mr...|Drama, Horror, Sc...|1920|      40|
+|    tt0007309|  Schuhpalast Pinkus|              Comedy|1916|      45|
+|    tt0009611|       Shoulder Arms|         Comedy, War|1918|      45|
+|    tt0010281|Ich möchte kein M...|     Comedy, Romance|1918|      45|
+|    tt0011641|Romeo und Julia i...|              Comedy|1920|      45|
+|    tt0015324|        Sherlock Jr.|Action, Comedy, R...|1924|      45|
+|    tt0017938|La glace à trois ...|      Drama, Romance|1927|      45|
+|    tt0033912|          Miss Polly|              Comedy|1941|      45|
+|    tt0035049|The McGuerins fro...|Adventure, Comedy...|1942|      45|
+|    tt0037439|       The Volunteer|                 War|1944|      45|
++-------------+--------------------+--------------------+----+--------+
+only showing top 10 rows
+
++----+---------------+
+|year|all_movies_2010|
++----+---------------+
+|2010|           2253|
++----+---------------+
+
++----+---------------+
+|year|all_movies_2011|
++----+---------------+
+|2011|           2389|
++----+---------------+
+
++----+---------------+
+|year|all_movies_2012|
++----+---------------+
+|2012|           2517|
++----+---------------+
+
++----+---------------+
+|year|all_movies_2013|
++----+---------------+
+|2013|           2749|
++----+---------------+
+
++----+---------------+
+|year|all_movies_2014|
++----+---------------+
+|2014|           2851|
++----+---------------+
+
++----+---------------+
+|year|all_movies_2015|
++----+---------------+
+|2015|           2903|
++----+---------------+
+
++----+---------------+
+|year|all_movies_2016|
++----+---------------+
+|2016|           3033|
++----+---------------+
+
++----+---------------+
+|year|all_movies_2017|
++----+---------------+
+|2017|           3106|
++----+---------------+
+
++----+---------------+
+|year|all_movies_2018|
++----+---------------+
+|2018|           2880|
++----+---------------+
+
++-----------------+
+|   total_avg_2010|
++-----------------+
+|5.650022191256351|
++-----------------+
+
++----------------+
+|  total_avg_2011|
++----------------+
+|5.63784009545056|
++----------------+
+
++------------------+
+|    total_avg_2012|
++------------------+
+|5.6447755249900196|
++------------------+
+
++-----------------+
+|   total_avg_2013|
++-----------------+
+|5.641360492132152|
++-----------------+
+
++-----------------+
+|   total_avg_2014|
++-----------------+
+|5.687022096773735|
++-----------------+
+
++----------------+
+|  total_avg_2015|
++----------------+
+|5.63785738851381|
++----------------+
+
++-----------------+
+|   total_avg_2016|
++-----------------+
+|5.698186615061296|
++-----------------+
+
++-----------------+
+|   total_avg_2017|
++-----------------+
+|5.759787507580698|
++-----------------+
+
++-----------------+
+|   total_avg_2018|
++-----------------+
+|5.771666662684745|
++-----------------+
+
++------------------+
+|   totalF_avg_2010|
++------------------+
+|5.8027987567544885|
++------------------+
+
++---------------+
+|totalM_avg_2010|
++---------------+
+|5.5832223673688|
++---------------+
+
++-----------------+
+|  totalF_avg_2011|
++-----------------+
+|5.772331521270564|
++-----------------+
+
++-----------------+
+|  totalM_avg_2011|
++-----------------+
+|5.563164499625345|
++-----------------+
+
++-----------------+
+|  totalF_avg_2012|
++-----------------+
+|5.794874853873755|
++-----------------+
+
++-----------------+
+|  totalM_avg_2012|
++-----------------+
+|5.555462851427735|
++-----------------+
+
++-----------------+
+|  totalF_avg_2013|
++-----------------+
+|5.785334791115104|
++-----------------+
+
++-----------------+
+|  totalM_avg_2013|
++-----------------+
+|5.548235721005314|
++-----------------+
+
++-----------------+
+|  totalF_avg_2014|
++-----------------+
+|5.849684217268961|
++-----------------+
+
++-----------------+
+|  totalM_avg_2014|
++-----------------+
+|5.600876884851821|
++-----------------+
+
++-----------------+
+|  totalF_avg_2015|
++-----------------+
+|5.812512931023249|
++-----------------+
+
++-----------------+
+|  totalM_avg_2015|
++-----------------+
+|5.550017222715911|
++-----------------+
+
++-----------------+
+|  totalF_avg_2016|
++-----------------+
+|5.915031384389945|
++-----------------+
+
++-----------------+
+|  totalM_avg_2016|
++-----------------+
+|5.588789978162549|
++-----------------+
+
++-----------------+
+|  totalF_avg_2017|
++-----------------+
+|5.991266520300719|
++-----------------+
+
++-----------------+
+|  totalM_avg_2017|
++-----------------+
+|5.614745652414642|
++-----------------+
+
++------------------+
+|   totalF_avg_2018|
++------------------+
+|6.0067826115981395|
++------------------+
+
++------------------+
+|   totalM_avg_2018|
++------------------+
+|5.5821180565903585|
++------------------+
+
+Traceback (most recent call last):
+  File "/usr/lib/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 63, in deco
+  File "/usr/lib/spark/python/lib/py4j-0.10.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+py4j.protocol.Py4JJavaError: An error occurred while calling o193.csv.
+: org.apache.spark.sql.AnalysisException: path hdfs://ip-172-31-66-54.ec2.internal:8020/SPRK_root/RatingAVG2016 already exists.;
+        at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:119)
+        at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:104)
+        at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:102)
+        at org.apache.spark.sql.execution.command.DataWritingCommandExec.doExecute(commands.scala:122)
+        at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:173)
+        at org.apache.spark.sql.execution.SparkPlan$$anonfun$execute$1.apply(SparkPlan.scala:169)
+        at org.apache.spark.sql.execution.SparkPlan$$anonfun$executeQuery$1.apply(SparkPlan.scala:197)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:194)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:169)
+        at org.apache.spark.sql.execution.QueryExecution.toRdd$lzycompute(QueryExecution.scala:114)
+        at org.apache.spark.sql.execution.QueryExecution.toRdd(QueryExecution.scala:112)
+        at org.apache.spark.sql.DataFrameWriter$$anonfun$runCommand$1.apply(DataFrameWriter.scala:676)
+        at org.apache.spark.sql.DataFrameWriter$$anonfun$runCommand$1.apply(DataFrameWriter.scala:676)
+        at org.apache.spark.sql.execution.SQLExecution$.org$apache$spark$sql$execution$SQLExecution$$executeQuery$1(SQLExecution.scala:83)
+        at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1$$anonfun$apply$1.apply(SQLExecution.scala:94)
+        at org.apache.spark.sql.execution.QueryExecutionMetrics$.withMetrics(QueryExecutionMetrics.scala:141)
+        at org.apache.spark.sql.execution.SQLExecution$.org$apache$spark$sql$execution$SQLExecution$$withMetrics(SQLExecution.scala:178)
+        at org.apache.spark.sql.execution.SQLExecution$$anonfun$withNewExecutionId$1.apply(SQLExecution.scala:93)
+        at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:200)
+        at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:92)
+        at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:676)
+        at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:285)
+        at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:271)
+        at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:229)
+        at org.apache.spark.sql.DataFrameWriter.csv(DataFrameWriter.scala:664)
+        at sun.reflect.GeneratedMethodAccessor201.invoke(Unknown Source)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+        at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+        at py4j.Gateway.invoke(Gateway.java:282)
+        at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+        at py4j.commands.CallCommand.execute(CallCommand.java:79)
+        at py4j.GatewayConnection.run(GatewayConnection.java:238)
+        at java.lang.Thread.run(Thread.java:748)
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/hadoop/IBDM_movies.py", line 312, in <module>
+    average_rating2016.coalesce(1).write.csv(sys.argv[3] + "/RatingAVG2016/")
+  File "/usr/lib/spark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 932, in csv
+  File "/usr/lib/spark/python/lib/py4j-0.10.7-src.zip/py4j/java_gateway.py", line 1257, in __call__
+  File "/usr/lib/spark/python/lib/pyspark.zip/pyspark/sql/utils.py", line 69, in deco
+pyspark.sql.utils.AnalysisException: 'path hdfs://ip-172-31-66-54.ec2.internal:8020/SPRK_root/RatingAVG2016 already exists.;'
+[hadoop@ip-172-31-66-54 ~]$ hadoop fs -ls /SPRK_root
+Found 19 items
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/AllMovies
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/Movies2010Num
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/Movies2011Num
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/Movies2012Num
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/Movies2013Num
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/Movies2014Num
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/Movies2015Num
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/Movies2016Num
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/Movies2017Num
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/Movies2018Num
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/RatingAVG2010
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/RatingAVG2011
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/RatingAVG2012
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/RatingAVG2013
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/RatingAVG2015
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/RatingAVG2016
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:38 /SPRK_root/input
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/output_movies
+drwxr-xr-x   - hadoop hadoop          0 2020-06-20 13:39 /SPRK_root/output_ratings
+[hadoop@ip-172-31-66-54 ~]$ hadoop fs -copyToLocal /SPRK_root
+[hadoop@ip-172-31-66-54 ~]$

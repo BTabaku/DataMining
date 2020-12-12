@@ -1,0 +1,297 @@
+=========================LOAD FILES PART 1 ===============================================
+ls -a
+.  ..  investor.txt  stock_prices.txt  tabakuQ1.pig  tabakuQ1terminal.txt  tabakuQ1.txt
+[cloudera@quickstart Q1]$ hadoop fs -ls
+
+Found 4 items
+drwxr-xr-x   - cloudera cloudera          0 2020-05-30 06:54 -mkdir
+drwxr-xr-x   - cloudera cloudera          0 2020-05-25 02:40 BigDataProject
+drwxr-xr-x   - cloudera cloudera          0 2020-05-30 06:54 fs
+drwxr-xr-x   - cloudera cloudera          0 2020-05-30 06:54 hadoop
+[cloudera@quickstart Q1]$ hadoop fs -mkdir /PIG_LATIN
+[cloudera@quickstart Q1]$ hadoop fs -mkdir /PIG_LATIN/input_files
+[cloudera@quickstart Q1]$ hadoop fs -copyFromLocal stock_prices.txt /PIG_LATIN/input_files
+[cloudera@quickstart Q1]$ hadoop fs -copyFromLocal investor.txt /PIG_LATIN/input_files
+[cloudera@quickstart Q1]$ hadoop fs -ls /PIG_LATIN/input_files
+Found 2 items
+-rw-r--r--   1 cloudera supergroup        748 2020-07-01 04:38 /PIG_LATIN/input_files/investor.txt
+-rw-r--r--   1 cloudera supergroup         35 2020-07-01 04:38 /PIG_LATIN/input_files/stock_prices.txt
+[cloudera@quickstart Q1]$ 
+
+
+==============================PART 2 PIG COMMANDS===============================
+[cloudera@quickstart Q1]$ pig
+grunt> exec tabakuQ1.pig //NOTE: it worked perfectly but were like 2500+ lines to follow so I executed commands one by one and keept track of them as shown below:
+
+pig
+log4j:WARN No appenders could be found for logger (org.apache.hadoop.util.Shell).
+log4j:WARN Please initialize the log4j system properly.
+.
+.
+.
+2020-07-01 06:27:09,988 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS
+2020-07-01 06:27:09,989 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+grunt> 
+
+
+1. Load files as 'investors' and 'stock_prices'
+
+
+
+grunt> investors = LOAD '/PIG_LATIN/input_files/investor.txt' AS(id:chararray, name:chararray,lastname:chararray, sharename:chararray,quantity:int);
+grunt> stock_prices = LOAD '/PIG_LATIN/input_files/stock_prices.txt' AS(sharename:chararray, price:int);
+
+
+
+2. Display both files to make sure they are loaded correctly
+
+
+grunt> describe investors;
+investors: {id: chararray,name: chararray,lastname: chararray,sharename: chararray,quantity: int}
+
+grunt> dump investors;
+2020-07-01 06:29:30,256 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1
+2020-07-01 06:29:30,256 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+(00001,Pippa,Dickens,BAC,240)
+(00002,Gavin,Thomson,CAH,60)
+(00003,Brian,Johnston,GE,850)
+(00004,Jessica,Henderson,MCD,200)
+(00005,Andrea,Arnold,PFE,130)
+(00006,Vanessa,Robertson,BAC,275)
+(00007,Megan,Clark,CAH,65)
+(00008,Lisa,Butler,GE,800)
+(00009,Amanda,Piper,MCD,210)
+(00010,Joe,Chapman,PFE,125)
+(00011,Pippa,Dickens,CAH,280)
+(00012,Gavin,Thomson,GE,35)
+(00013,Brian,Johnston,MCD,810)
+(00014,Jessica,Henderson,PFE,190)
+(00015,Andrea,Arnold,BAC,105)
+(00016,Vanessa,Robertson,CAH,250)
+(00017,Megan,Clark,GE,75)
+(00018,Lisa,Butler,MCD,700)
+(00019,Amanda,Piper,PFE,225)
+(00020,Joe,Chapman,BAC,115)
+(00021,Jessica,Henderson,CAH,210)
+(00022,Andrea,Arnold,GE,65)
+(00023,Vanessa,Robertson,MCD,875)
+(00024,Megan,Clark,PFE,220)
+(00025,Lisa,Butler,BAC,125)
+(00026,Amanda,Piper,CAH,35)
+(00027,Joe,Chapman,GE,810)
+grunt> 
+
+grunt> 
+grunt> describe stock_prices;
+2020-07-01 06:29:30,449 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - fs.default.name is deprecated. Instead, use fs.defaultFS
+2020-07-01 06:29:30,449 [main] INFO  org.apache.hadoop.conf.Configuration.deprecation - mapred.job.tracker is deprecated. Instead, use mapreduce.jobtracker.address
+stock_prices: {sharename: chararray,price: int}
+
+grunt> dump stock_prices;
+2020-07-01 06:32:07,125 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1
+2020-07-01 06:32:07,125 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+(BAC,25)
+(CAH,48)
+(GE,12)
+(MCD,170)
+(PFE,40)
+grunt> 
+
+
+
+3. Joins the two files ('investors' and 'stock_prices') by stock symbol
+
+grunt> joined_investor_stock_prices = JOIN investors BY sharename, stock_prices BY sharename;
+grunt> 
+
+
+4. Display the joined file
+
+grunt> describe joined_investor_stock_prices;
+joined_investor_stock_prices: {investors::id: chararray,investors::name: chararray,investors::lastname: chararray,investors::sharename: chararray,investors::quantity: int,stock_prices::sharename: chararray,stock_prices::price: int}
+grunt> 
+
+
+grunt> dump joined_investor_stock_prices;
+
+2020-07-01 06:35:52,306 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 25% complete
+2020-07-01 06:35:53,412 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 50% complete
+
+2020-07-01 06:36:05,663 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+(00027,Joe,Chapman,GE,810,GE,12)
+(00003,Brian,Johnston,GE,850,GE,12)
+(00017,Megan,Clark,GE,75,GE,12)
+(00008,Lisa,Butler,GE,800,GE,12)
+(00012,Gavin,Thomson,GE,35,GE,12)
+(00022,Andrea,Arnold,GE,65,GE,12)
+(00001,Pippa,Dickens,BAC,240,BAC,25)
+(00025,Lisa,Butler,BAC,125,BAC,25)
+(00020,Joe,Chapman,BAC,115,BAC,25)
+(00015,Andrea,Arnold,BAC,105,BAC,25)
+(00006,Vanessa,Robertson,BAC,275,BAC,25)
+(00026,Amanda,Piper,CAH,35,CAH,48)
+(00011,Pippa,Dickens,CAH,280,CAH,48)
+(00002,Gavin,Thomson,CAH,60,CAH,48)
+(00016,Vanessa,Robertson,CAH,250,CAH,48)
+(00007,Megan,Clark,CAH,65,CAH,48)
+(00021,Jessica,Henderson,CAH,210,CAH,48)
+(00013,Brian,Johnston,MCD,810,MCD,170)
+(00004,Jessica,Henderson,MCD,200,MCD,170)
+(00018,Lisa,Butler,MCD,700,MCD,170)
+(00023,Vanessa,Robertson,MCD,875,MCD,170)
+(00009,Amanda,Piper,MCD,210,MCD,170)
+(00024,Megan,Clark,PFE,220,PFE,40)
+(00010,Joe,Chapman,PFE,125,PFE,40)
+(00014,Jessica,Henderson,PFE,190,PFE,40)
+(00005,Andrea,Arnold,PFE,130,PFE,40)
+(00019,Amanda,Piper,PFE,225,PFE,40)
+grunt> 
+
+
+
+
+5. Group the above file (joined file) by the 'lastname' of the investors and display the results
+
+grunt> group_joined_by_lastname = GROUP joined_investor_stock_prices by lastname;
+grunt> dump group_joined_by_lastname;
+
+2020-07-01 06:36:59,287 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 0% complete
+2020-07-01 06:37:17,049 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 12% complete
+2020-07-01 06:37:17,575 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 25% complete
+2020-07-01 06:37:24,370 [main] INFO  org.apache.pig.backend.hadoop.executionengine.mapReduceLayer.MapReduceLauncher - 50% complete
+
+
+2020-07-01 06:38:01,999 [main] INFO  org.apache.pig.data.SchemaTupleBackend - Key [pig.schematuple] was not set... will not generate code.
+2020-07-01 06:38:02,023 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1
+2020-07-01 06:38:02,023 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+(Clark,{(00017,Megan,Clark,GE,75,GE,12),(00024,Megan,Clark,PFE,220,PFE,40),(00007,Megan,Clark,CAH,65,CAH,48)})
+(Piper,{(00026,Amanda,Piper,CAH,35,CAH,48),(00019,Amanda,Piper,PFE,225,PFE,40),(00009,Amanda,Piper,MCD,210,MCD,170)})
+(Arnold,{(00005,Andrea,Arnold,PFE,130,PFE,40),(00022,Andrea,Arnold,GE,65,GE,12),(00015,Andrea,Arnold,BAC,105,BAC,25)})
+(Butler,{(00008,Lisa,Butler,GE,800,GE,12),(00018,Lisa,Butler,MCD,700,MCD,170),(00025,Lisa,Butler,BAC,125,BAC,25)})
+(Chapman,{(00027,Joe,Chapman,GE,810,GE,12),(00010,Joe,Chapman,PFE,125,PFE,40),(00020,Joe,Chapman,BAC,115,BAC,25)})
+(Dickens,{(00001,Pippa,Dickens,BAC,240,BAC,25),(00011,Pippa,Dickens,CAH,280,CAH,48)})
+(Thomson,{(00002,Gavin,Thomson,CAH,60,CAH,48),(00012,Gavin,Thomson,GE,35,GE,12)})
+(Johnston,{(00013,Brian,Johnston,MCD,810,MCD,170),(00003,Brian,Johnston,GE,850,GE,12)})
+(Henderson,{(00021,Jessica,Henderson,CAH,210,CAH,48),(00004,Jessica,Henderson,MCD,200,MCD,170),(00014,Jessica,Henderson,PFE,190,PFE,40)})
+(Robertson,{(00016,Vanessa,Robertson,CAH,250,CAH,48),(00006,Vanessa,Robertson,BAC,275,BAC,25),(00023,Vanessa,Robertson,MCD,875,MCD,170)})
+grunt> 
+
+
+6. Calculate the total shares (simply the sum of shares among all stocks) and display results
+
+grunt> 
+grunt> 
+grunt> group_of_investors = GROUP investors ALL;
+grunt> total_shares = FOREACH group_of_investors GENERATE group, SUM(investors.quantity);
+grunt> dump total_shares;
+
+org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+(all,8080)
+grunt> 
+
+
+
+7. Calculate the total dollar amount that each investor has invested (shares per each stock multiplied by the stock price) and display the results
+
+grunt> 
+grunt> 
+grunt> investors_total_stock_price = FOREACH joined_investor_stock_prices GENERATE name, lastname, quantity * price as total_amount_price;
+grunt> describe investors_total_stock_price;
+investors_total_stock_price: {investors::name: chararray,investors::lastname: chararray,total_amount_price: int}
+grunt> dump investors_total_stock_price;
+2020-07-01 06:41:29,827 [main] INFO  org.apache.pig.tools.pigstats.ScriptState - Pig features used in the script: HASH_JOIN
+.
+.
+.
+2020-07-01 06:42:04,238 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+(Joe,Chapman,9720)
+(Brian,Johnston,10200)
+(Megan,Clark,900)
+(Lisa,Butler,9600)
+(Gavin,Thomson,420)
+(Andrea,Arnold,780)
+(Pippa,Dickens,6000)
+(Lisa,Butler,3125)
+(Joe,Chapman,2875)
+(Andrea,Arnold,2625)
+(Vanessa,Robertson,6875)
+(Amanda,Piper,1680)
+(Pippa,Dickens,13440)
+(Gavin,Thomson,2880)
+(Vanessa,Robertson,12000)
+(Megan,Clark,3120)
+(Jessica,Henderson,10080)
+(Brian,Johnston,137700)
+(Jessica,Henderson,34000)
+(Lisa,Butler,119000)
+(Vanessa,Robertson,148750)
+(Amanda,Piper,35700)
+(Megan,Clark,8800)
+(Joe,Chapman,5000)
+(Jessica,Henderson,7600)
+(Andrea,Arnold,5200)
+(Amanda,Piper,9000)
+grunt> 
+
+
+grunt> 
+grunt> investors_group_by_name = GROUP investors_total_stock_price by (name, lastname);
+grunt> describe investors_group_by_name;
+investors_group_by_name: {group: (investors::name: chararray,investors::lastname: chararray),investors_total_stock_price: {(investors::name: chararray,investors::lastname: chararray,total_amount_price: int)}}
+grunt> total_dollar_amount = FOREACH investors_group_by_name GENERATE group, SUM(investors_total_stock_price.total_amount_price) as total_amount_of_dollars_spent;
+grunt> describe total_dollar_amount;
+total_dollar_amount: {group: (investors::name: chararray,investors::lastname: chararray),total_amount_of_dollars_spent: long}
+grunt> 
+grunt>
+grunt> dump total_dollar_amount;
+
+2020-07-01 06:44:49,072 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+((Joe,Chapman),17595)
+((Lisa,Butler),131725)
+((Brian,Johnston),147900)
+((Gavin,Thomson),3300)
+((Megan,Clark),12820)
+((Pippa,Dickens),19440)
+((Amanda,Piper),46380)
+((Andrea,Arnold),8605)
+((Jessica,Henderson),51680)
+((Vanessa,Robertson),167625)
+grunt> 
+
+
+8. Filter the top two investors that have invested the most dollar amount and display the results
+
+grunt> 
+grunt> 
+grunt> filter_list = ORDER total_dollar_amount BY total_amount_of_dollars_spent DESC;
+grunt> dump filter_list;
+
+2020-07-01 06:49:11,381 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+((Vanessa,Robertson),167625)
+((Brian,Johnston),147900)
+((Lisa,Butler),131725)
+((Jessica,Henderson),51680)
+((Amanda,Piper),46380)
+((Pippa,Dickens),19440)
+((Joe,Chapman),17595)
+((Megan,Clark),12820)
+((Andrea,Arnold),8605)
+((Gavin,Thomson),3300)
+grunt> 
+
+2020-07-01 07:04:07,041 [main] INFO  org.apache.hadoop.mapreduce.lib.input.FileInputFormat - Total input paths to process : 1
+2020-07-01 07:04:07,041 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil - Total input paths to process : 1
+((Vanessa,Robertson),167625)
+((Brian,Johnston),147900)
+grunt> 
+
+
+
+
+
+
+
+
+
+
+

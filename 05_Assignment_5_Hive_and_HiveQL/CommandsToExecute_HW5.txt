@@ -1,0 +1,91 @@
+-task 1
+hadoop fs -mkdir HV;
+hadoop fs -mkdir HV/Exercise1;
+hadoop fs -mkdir HV/Exercise1/input;
+
+-we cpy the files into the input directory
+hadoop fs -copyFromLocal customer_details.txt HV/Exercise1/input;
+hadoop fs -copyFromLocal late_payments.txt HV/Exercise1/input;
+
+hadoop fs -ls HV/Exercise1/input/;
+
+-Task 2
+
+-We pass to hive 
+
+hive
+CREATE DATABASE exercise1;
+show databases;
+
+-we create two tables  ‘customers’ and ‘payments’.
+-table  1
+
+CREATE EXTERNAL TABLE IF NOT EXISTS exercise1.customers(c_ID int, c_name String, c_street String, c_city String, c_state String, c_zip String, c_date_of_birth String, c_gender String, c_credit_card String, c_internet String , c_mobile String ) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' LINES TERMINATED BY '\n' STORED AS TEXTFILE LOCATION '/user/hive/warehouse/exercise1/customers';
+
+-table 2
+CREATE TABLE IF NOT EXISTS exercise1.payments(p_ID int, p_transaction_ID String, p_transaction_DATE String, p_late String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE;
+
+
+use exercise1;
+show tables;
+
+-displaying the structure
+
+describe customers;
+describe payments;
+
+
+-Task 3
+Loading the data into the tables
+
+LOAD DATA  LOCAL INPATH './customer_details.txt' OVERWRITE INTO TABLE customers;
+LOAD DATA  LOCAL INPATH './late_payments.txt' OVERWRITE INTO TABLE payments;
+
+-4  Display the ID, name, year of birth, zip code, for all customers from the state of New York.
+
+SELECT c_ID, c_name, c_date_of_birth, c_zip FROM customers WHERE c_state = 'New York';
+
+
+-5  Display the total number of customers who have occurred late payments for each zip code.
+
+SELECT c_zip , COUNT(c_ID) AS total FROM customers JOIN payments ON c_ID = p_ID WHERE p_late = 'TRUE' GROUP BY c_zip;
+
+
+-6  Display the customers who have any late transactions and the date of each late transaction for the customers born before 1985. 
+
+
+https:-bigdataprogrammers.com/string-date-conversion-hive/ -> Regex link very useful
+
+
+SELECT c_ID, c_name, c_street, c_city, c_state, c_zip, c_date_of_birth, c_gender  FROM customers JOIN payments ON c_ID = p_ID WHERE p_late = 'TRUE' AND to_date(from_unixtime(UNIX_TIMESTAMP(c_date_of_birth,'dd-MM-yyyy'))) < 1985 GROUP BY c_ID, c_name, c_street, c_city, c_state, c_zip, c_date_of_birth, c_gender;
+
+
+-7  Display the cities and the number of customers who do not have a credit card for each city sorted by the number of customers.
+
+SELECT c_city AS city , COUNT(c_ID) as total FROM customers JOIN payments ON c_ID = p_ID WHERE c_credit_card = 'FALSE' GROUP BY c_city  SORT BY total ASC;
+
+
+
+-8  Display the state and number of customers who have late payments and use mobile banking in each state.
+
+SELECT c_state AS state , COUNT(c_ID) as total FROM customers JOIN payments ON c_ID = p_ID WHERE p_late = 'TRUE' AND c_mobile = 'TRUE' GROUP BY c_state;
+
+-9  Display all customers who do not have a mobile phone.
+
+SELECT c_ID, c_name, c_street, c_city, c_state, c_zip, c_date_of_birth, c_gender, c_credit_card, c_internet, c_mobile FROM customers WHERE c_mobile = 'FALSE';
+
+
+-10 Display all customers who have late payments and the number of late payments sorted by the number of late payments.
+
+SELECT c_ID, c_name,c_city,c_state, COUNT(c_ID) as total FROM customers JOIN payments ON c_ID = p_ID WHERE p_late = 'TRUE' GROUP BY c_ID,c_name, c_city , c_state  SORT BY total ASC;
+
+
+-11 Display customers (id, name, city, state) who have no late payments and the total number of on-time payments. Order the output by the number of on-time payments.
+
+SELECT c_ID, c_name,c_city,c_state, COUNT(c_ID) as total FROM customers JOIN payments ON c_ID = p_ID WHERE p_late = 'FALSE' GROUP BY c_ID, c_name,c_city,c_state;
+
+
+-12 Display customers (id, name, city, state) who have no late payments and use the Internet for banking.
+
+SELECT c_ID, c_name, c_street, c_city, c_state FROM customers JOIN payments ON c_ID = p_ID  WHERE p_late = 'FALSE' AND c_internet = 'TRUE' GROUP BY c_ID, c_name, c_street, c_city, c_state;
+

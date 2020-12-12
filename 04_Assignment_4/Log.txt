@@ -1,0 +1,1753 @@
+ray,stock_prices::price: int)}}
+grunt> dump investors_group_by_name;
+3310824 [main] INFO  org.apache.pig.tools.pigstats.ScriptState  - Pig features used in the script: HASH_JOIN,GROUP_BY
+20/05/02 13:16:29 INFO pigstats.ScriptState: Pig features used in the script: HASH_JOIN,GROUP_BY
+3310851 [main] INFO  org.apache.pig.data.SchemaTupleBackend  - Key [pig.schematuple] was not set... will not generate code.
+20/05/02 13:16:29 INFO data.SchemaTupleBackend: Key [pig.schematuple] was not set... will not generate code.
+3310851 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer  - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, NestedLimitOptimizer, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+20/05/02 13:16:29 INFO optimizer.LogicalPlanOptimizer: {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, NestedLimitOptimizer, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+3310873 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezLauncher  - Tez staging directory is /tmp/temp759499529 and resources directory is /tmp/temp759499529
+20/05/02 13:16:29 INFO tez.TezLauncher: Tez staging directory is /tmp/temp759499529 and resources directory is /tmp/temp759499529
+3310874 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.plan.TezCompiler  - File concatenation threshold: 100 optimistic? false
+20/05/02 13:16:29 INFO plan.TezCompiler: File concatenation threshold: 100 optimistic? false
+3310882 [main] INFO  org.apache.pig.builtin.PigStorage  - Using PigTextInputFormat
+20/05/02 13:16:29 INFO builtin.PigStorage: Using PigTextInputFormat
+20/05/02 13:16:29 INFO input.FileInputFormat: Total input files to process : 1
+3310883 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:16:29 INFO util.MapRedUtil: Total input paths to process : 1
+3310887 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths (combined) to process : 1
+20/05/02 13:16:29 INFO util.MapRedUtil: Total input paths (combined) to process : 1
+20/05/02 13:16:29 INFO hadoop.MRInputHelpers: NumSplits: 1, SerializedSize: 396
+3310896 [main] INFO  org.apache.pig.builtin.PigStorage  - Using PigTextInputFormat
+20/05/02 13:16:29 INFO builtin.PigStorage: Using PigTextInputFormat
+20/05/02 13:16:29 INFO input.FileInputFormat: Total input files to process : 1
+3310897 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:16:29 INFO util.MapRedUtil: Total input paths to process : 1
+3310906 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths (combined) to process : 1
+20/05/02 13:16:29 INFO util.MapRedUtil: Total input paths (combined) to process : 1
+20/05/02 13:16:29 INFO hadoop.MRInputHelpers: NumSplits: 1, SerializedSize: 399
+3310924 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: joda-time-2.9.4.jar
+20/05/02 13:16:29 INFO tez.TezJobCompiler: Local resource: joda-time-2.9.4.jar
+3310925 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: pig-0.17.0-core-h2.jar
+20/05/02 13:16:29 INFO tez.TezJobCompiler: Local resource: pig-0.17.0-core-h2.jar
+3310925 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: antlr-runtime-3.4.jar
+20/05/02 13:16:29 INFO tez.TezJobCompiler: Local resource: antlr-runtime-3.4.jar
+3310925 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: automaton-1.11-8.jar
+20/05/02 13:16:29 INFO tez.TezJobCompiler: Local resource: automaton-1.11-8.jar
+3310973 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-558: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:16:29 INFO tez.TezDagBuilder: For vertex - scope-558: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3310973 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors,investors_stock_prices
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Processing aliases: investors,investors_stock_prices
+3310973 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: investors[1,12],investors[-1,-1],investors_stock_prices[3,25]
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Detailed locations: investors[1,12],investors[-1,-1],investors_stock_prices[3,25]
+3310973 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Pig features in the vertex:
+3310996 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-559: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:16:29 INFO tez.TezDagBuilder: For vertex - scope-559: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3310996 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors_stock_prices,stock_prices
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Processing aliases: investors_stock_prices,stock_prices
+3310996 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: stock_prices[2,15],stock_prices[-1,-1],investors_stock_prices[3,25]
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Detailed locations: stock_prices[2,15],stock_prices[-1,-1],investors_stock_prices[3,25]
+3310996 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Pig features in the vertex:
+3311021 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Set auto parallelism for vertex scope-560
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Set auto parallelism for vertex scope-560
+3311021 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-560: parallelism=2, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:16:29 INFO tez.TezDagBuilder: For vertex - scope-560: parallelism=2, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3311021 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors_group_by_name,investors_stock_prices
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Processing aliases: investors_group_by_name,investors_stock_prices
+3311021 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: investors_stock_prices[3,25],investors_group_by_name[22,26]
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Detailed locations: investors_stock_prices[3,25],investors_group_by_name[22,26]
+3311021 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: HASH_JOIN
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Pig features in the vertex: HASH_JOIN
+3311048 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Set auto parallelism for vertex scope-561
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Set auto parallelism for vertex scope-561
+3311048 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-561: parallelism=20, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:16:29 INFO tez.TezDagBuilder: For vertex - scope-561: parallelism=20, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3311048 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases:
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Processing aliases:
+3311048 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations:
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Detailed locations:
+3311048 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: GROUP_BY
+20/05/02 13:16:29 INFO tez.TezDagBuilder: Pig features in the vertex: GROUP_BY
+3311066 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Total estimated parallelism is 24
+20/05/02 13:16:29 INFO tez.TezJobCompiler: Total estimated parallelism is 24
+3311104 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - Submitting DAG PigLatin:DefaultJobName-0_scope-28
+20/05/02 13:16:29 INFO tez.TezJob: Submitting DAG PigLatin:DefaultJobName-0_scope-28
+20/05/02 13:16:29 INFO client.TezClient: Submitting dag to TezSession, sessionName=PigLatin:DefaultJobName, applicationId=application_1588421329272_0006, dagName=PigLatin:DefaultJobName-0_scope-28, callerContext={ context=PIG, callerType=PIG_SCRIPT_ID, callerId=PIG-default-c3048a7c-c646-4669-9c8d-af100590b1bf }
+20/05/02 13:16:29 INFO client.TezClient: Submitted dag to TezSession, sessionName=PigLatin:DefaultJobName, applicationId=application_1588421329272_0006, dagId=dag_1588421329272_0006_3, dagName=PigLatin:DefaultJobName-0_scope-28
+3311155 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - Submitted DAG PigLatin:DefaultJobName-0_scope-28. Application id: application_1588421329272_0006
+20/05/02 13:16:29 INFO tez.TezJob: Submitted DAG PigLatin:DefaultJobName-0_scope-28. Application id: application_1588421329272_0006
+3312095 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezLauncher  - HadoopJobId: job_1588421329272_0006
+20/05/02 13:16:30 INFO tez.TezLauncher: HadoopJobId: job_1588421329272_0006
+3312166 [Timer-14] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - DAG Status: status=RUNNING, progress=TotalTasks: 3 Succeeded: 0 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=null
+20/05/02 13:16:30 INFO tez.TezJob: DAG Status: status=RUNNING, progress=TotalTasks: 3 Succeeded: 0 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=null
+3321191 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - DAG Status: status=SUCCEEDED, progress=TotalTasks: 4 Succeeded: 4 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=Counters: 58
+        org.apache.tez.common.counters.DAGCounter
+                NUM_SUCCEEDED_TASKS=4
+                TOTAL_LAUNCHED_TASKS=4
+                DATA_LOCAL_TASKS=1
+                RACK_LOCAL_TASKS=1
+                AM_CPU_MILLISECONDS=520
+                AM_GC_TIME_MILLIS=0
+        File System Counters
+                FILE_BYTES_READ=11097
+                FILE_BYTES_WRITTEN=2952
+                FILE_READ_OPS=0
+                FILE_LARGE_READ_OPS=0
+                FILE_WRITE_OPS=0
+                HDFS_BYTES_READ=782
+                HDFS_BYTES_WRITTEN=1428
+                HDFS_READ_OPS=5
+                HDFS_LARGE_READ_OPS=0
+                HDFS_WRITE_OPS=2
+        org.apache.tez.common.counters.TaskCounter
+                REDUCE_INPUT_GROUPS=20
+                REDUCE_INPUT_RECORDS=59
+                COMBINE_INPUT_RECORDS=0
+                SPILLED_RECORDS=118
+                NUM_SHUFFLED_INPUTS=13
+                NUM_SKIPPED_INPUTS=11
+                NUM_FAILED_SHUFFLE_INPUTS=0
+                MERGED_MAP_OUTPUTS=13
+                GC_TIME_MILLIS=240
+                CPU_MILLISECONDS=7300
+                PHYSICAL_MEMORY_BYTES=1419771904
+                VIRTUAL_MEMORY_BYTES=23322767360
+                COMMITTED_HEAP_BYTES=1419771904
+                INPUT_RECORDS_PROCESSED=32
+                INPUT_SPLIT_LENGTH_BYTES=782
+                OUTPUT_RECORDS=69
+                OUTPUT_LARGE_RECORDS=0
+                OUTPUT_BYTES=2381
+                OUTPUT_BYTES_WITH_OVERHEAD=2081
+                OUTPUT_BYTES_PHYSICAL=1758
+                ADDITIONAL_SPILLS_BYTES_WRITTEN=594
+                ADDITIONAL_SPILLS_BYTES_READ=1626
+                ADDITIONAL_SPILL_COUNT=0
+                SHUFFLE_CHUNK_COUNT=3
+                SHUFFLE_BYTES=1758
+                SHUFFLE_BYTES_DECOMPRESSED=2081
+                SHUFFLE_BYTES_TO_MEM=726
+                SHUFFLE_BYTES_TO_DISK=0
+                SHUFFLE_BYTES_DISK_DIRECT=1032
+                NUM_MEM_TO_DISK_MERGES=0
+                NUM_DISK_TO_DISK_MERGES=0
+                SHUFFLE_PHASE_TIME=347
+                MERGE_PHASE_TIME=409
+                FIRST_EVENT_RECEIVED=67
+                LAST_EVENT_RECEIVED=67
+        MultiStoreCounters
+                Output records in _0_tmp-152718245=10
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+20/05/02 13:16:39 INFO tez.TezJob: DAG Status: status=SUCCEEDED, progress=TotalTasks: 4 Succeeded: 4 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=Counters: 58
+        org.apache.tez.common.counters.DAGCounter
+                NUM_SUCCEEDED_TASKS=4
+                TOTAL_LAUNCHED_TASKS=4
+                DATA_LOCAL_TASKS=1
+                RACK_LOCAL_TASKS=1
+                AM_CPU_MILLISECONDS=520
+                AM_GC_TIME_MILLIS=0
+        File System Counters
+                FILE_BYTES_READ=11097
+                FILE_BYTES_WRITTEN=2952
+                FILE_READ_OPS=0
+                FILE_LARGE_READ_OPS=0
+                FILE_WRITE_OPS=0
+                HDFS_BYTES_READ=782
+                HDFS_BYTES_WRITTEN=1428
+                HDFS_READ_OPS=5
+                HDFS_LARGE_READ_OPS=0
+                HDFS_WRITE_OPS=2
+        org.apache.tez.common.counters.TaskCounter
+                REDUCE_INPUT_GROUPS=20
+                REDUCE_INPUT_RECORDS=59
+                COMBINE_INPUT_RECORDS=0
+                SPILLED_RECORDS=118
+                NUM_SHUFFLED_INPUTS=13
+                NUM_SKIPPED_INPUTS=11
+                NUM_FAILED_SHUFFLE_INPUTS=0
+                MERGED_MAP_OUTPUTS=13
+                GC_TIME_MILLIS=240
+                CPU_MILLISECONDS=7300
+                PHYSICAL_MEMORY_BYTES=1419771904
+                VIRTUAL_MEMORY_BYTES=23322767360
+                COMMITTED_HEAP_BYTES=1419771904
+                INPUT_RECORDS_PROCESSED=32
+                INPUT_SPLIT_LENGTH_BYTES=782
+                OUTPUT_RECORDS=69
+                OUTPUT_LARGE_RECORDS=0
+                OUTPUT_BYTES=2381
+                OUTPUT_BYTES_WITH_OVERHEAD=2081
+                OUTPUT_BYTES_PHYSICAL=1758
+                ADDITIONAL_SPILLS_BYTES_WRITTEN=594
+                ADDITIONAL_SPILLS_BYTES_READ=1626
+                ADDITIONAL_SPILL_COUNT=0
+                SHUFFLE_CHUNK_COUNT=3
+                SHUFFLE_BYTES=1758
+                SHUFFLE_BYTES_DECOMPRESSED=2081
+                SHUFFLE_BYTES_TO_MEM=726
+                SHUFFLE_BYTES_TO_DISK=0
+                SHUFFLE_BYTES_DISK_DIRECT=1032
+                NUM_MEM_TO_DISK_MERGES=0
+                NUM_DISK_TO_DISK_MERGES=0
+                SHUFFLE_PHASE_TIME=347
+                MERGE_PHASE_TIME=409
+                FIRST_EVENT_RECEIVED=67
+                LAST_EVENT_RECEIVED=67
+        MultiStoreCounters
+                Output records in _0_tmp-152718245=10
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+3322097 [main] INFO  org.apache.pig.tools.pigstats.tez.TezPigScriptStats  - Script Statistics:
+
+       HadoopVersion: 2.8.5-amzn-5
+          PigVersion: 0.17.0
+          TezVersion: 0.9.2
+              UserId: hadoop
+            FileName:
+           StartedAt: 2020-05-02 13:16:29
+          FinishedAt: 2020-05-02 13:16:40
+            Features: HASH_JOIN,GROUP_BY
+
+Success!
+
+
+DAG 0:
+                                    Name: PigLatin:DefaultJobName-0_scope-28
+                           ApplicationId: job_1588421329272_0006
+                      TotalLaunchedTasks: 4
+                           FileBytesRead: 11097
+                        FileBytesWritten: 2952
+                           HdfsBytesRead: 782
+                        HdfsBytesWritten: 1428
+      SpillableMemoryManager spill count: 0
+                Bags proactively spilled: 0
+             Records proactively spilled: 0
+
+DAG Plan:
+Tez vertex scope-558    ->      Tez vertex scope-560,
+Tez vertex scope-559    ->      Tez vertex scope-560,
+Tez vertex scope-560    ->      Tez vertex scope-561,
+Tez vertex scope-561
+
+Vertex Stats:
+VertexId Parallelism TotalTasks   InputRecords   ReduceInputRecords  OutputRecords  FileBytesRead FileBytesWritten  HdfsBytesRead HdfsBytesWritten Alias Feature Outputs
+scope-558          1          1             27                    0             27            112              680            748                0 investors,investors_stock_prices
+scope-559          1          1              5                    0              5            112              158             34                0 investors_stock_prices,stock_prices
+scope-560          2          1              0                   32             27           1570             2114              0                0 investors_group_by_name,investors_stock_prices        HASH_JOIN
+scope-561         -1          1              0                   27             10           9303                0              0             1428       GROUP_BY        hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp-152718245,
+
+Input(s):
+Successfully read 27 records (748 bytes) from: "/PIG/input/investor.txt"
+Successfully read 5 records (34 bytes) from: "/PIG/input/stockprices.txt"
+
+Output(s):
+Successfully stored 10 records (1428 bytes) in: "hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp-152718245"
+
+20/05/02 13:16:40 INFO tez.TezPigScriptStats: Script Statistics:
+
+       HadoopVersion: 2.8.5-amzn-5
+          PigVersion: 0.17.0
+          TezVersion: 0.9.2
+              UserId: hadoop
+            FileName:
+           StartedAt: 2020-05-02 13:16:29
+          FinishedAt: 2020-05-02 13:16:40
+            Features: HASH_JOIN,GROUP_BY
+
+Success!
+
+
+DAG 0:
+                                    Name: PigLatin:DefaultJobName-0_scope-28
+                           ApplicationId: job_1588421329272_0006
+                      TotalLaunchedTasks: 4
+                           FileBytesRead: 11097
+                        FileBytesWritten: 2952
+                           HdfsBytesRead: 782
+                        HdfsBytesWritten: 1428
+      SpillableMemoryManager spill count: 0
+                Bags proactively spilled: 0
+             Records proactively spilled: 0
+
+DAG Plan:
+Tez vertex scope-558    ->      Tez vertex scope-560,
+Tez vertex scope-559    ->      Tez vertex scope-560,
+Tez vertex scope-560    ->      Tez vertex scope-561,
+Tez vertex scope-561
+
+Vertex Stats:
+VertexId Parallelism TotalTasks   InputRecords   ReduceInputRecords  OutputRecords  FileBytesRead FileBytesWritten  HdfsBytesRead HdfsBytesWritten Alias Feature Outputs
+scope-558          1          1             27                    0             27            112              680            748                0 investors,investors_stock_prices
+scope-559          1          1              5                    0              5            112              158             34                0 investors_stock_prices,stock_prices
+scope-560          2          1              0                   32             27           1570             2114              0                0 investors_group_by_name,investors_stock_prices        HASH_JOIN
+scope-561         -1          1              0                   27             10           9303                0              0             1428       GROUP_BY        hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp-152718245,
+
+Input(s):
+Successfully read 27 records (748 bytes) from: "/PIG/input/investor.txt"
+Successfully read 5 records (34 bytes) from: "/PIG/input/stockprices.txt"
+
+Output(s):
+Successfully stored 10 records (1428 bytes) in: "hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp-152718245"
+
+20/05/02 13:16:40 INFO input.FileInputFormat: Total input files to process : 1
+3322102 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:16:40 INFO util.MapRedUtil: Total input paths to process : 1
+((Joe,Chapman),{(00027,Joe,Chapman,GE,810,GE,12),(00010,Joe,Chapman,PFE,125,PFE,40),(00020,Joe,Chapman,BAC,115,BAC,25)})
+((Lisa,Butler),{(00008,Lisa,Butler,GE,800,GE,12),(00025,Lisa,Butler,BAC,125,BAC,25),(00018,Lisa,Butler,MCD,700,MCD,170)})
+((Brian,Johnston),{(00013,Brian,Johnston,MCD,810,MCD,170),(00003,Brian,Johnston,GE,850,GE,12)})
+((Gavin,Thomson),{(00002,Gavin,Thomson,CAH,60,CAH,48),(00012,Gavin,Thomson,GE,35,GE,12)})
+((Megan,Clark),{(00007,Megan,Clark,CAH,65,CAH,48),(00017,Megan,Clark,GE,75,GE,12),(00024,Megan,Clark,PFE,220,PFE,40)})
+((Pippa,Dickens),{(00001,Pippa,Dickens,BAC,240,BAC,25),(00011,Pippa,Dickens,CAH,280,CAH,48)})
+((Amanda,Piper),{(00009,Amanda,Piper,MCD,210,MCD,170),(00026,Amanda,Piper,CAH,35,CAH,48),(00019,Amanda,Piper,PFE,225,PFE,40)})
+((Andrea,Arnold),{(00005,Andrea,Arnold,PFE,130,PFE,40),(00022,Andrea,Arnold,GE,65,GE,12),(00015,Andrea,Arnold,BAC,105,BAC,25)})
+((Jessica,Henderson),{(00004,Jessica,Henderson,MCD,200,MCD,170),(00021,Jessica,Henderson,CAH,210,CAH,48),(00014,Jessica,Henderson,PFE,190,PFE,40)})
+((Vanessa,Robertson),{(00006,Vanessa,Robertson,BAC,275,BAC,25),(00023,Vanessa,Robertson,MCD,875,MCD,170),(00016,Vanessa,Robertson,CAH,250,CAH,48)})
+grunt> total_dollar_amount = FOREACH investors_group_by_name GENERATE group, SUM(investors_stock_prices.total_amount_price) as total_amount_of_dollars_spent;
+3356697 [main] ERROR org.apache.pig.tools.grunt.Grunt  - ERROR 1128: Cannot find field total_amount_price in investors::id:chararray,investors::name:chararray,investors::lastname:chararray,investors::sharename:chararray,investors::quantity:int,stock_prices::sharename:chararray,stock_prices::price:int
+20/05/02 13:17:15 ERROR grunt.Grunt: ERROR 1128: Cannot find field total_amount_price in investors::id:chararray,investors::name:chararray,investors::lastname:chararray,investors::sharename:chararray,investors::quantity:int,stock_prices::sharename:chararray,stock_prices::price:int
+Details at logfile: /mnt/var/log/pig/pig_1588422078717.log
+grunt> total_dollar_amount = FOREACH investors_group_by_name GENERATE group, SUM(investors_total_stock_price.total_amount_price) as total_amount_of_dollars_spent;
+3431047 [main] ERROR org.apache.pig.tools.grunt.Grunt  - ERROR 1045: <line 23, column 70> Could not infer the matching function for org.apache.pig.builtin.SUM as multiple or none of them fit. Please use an explicit cast.
+20/05/02 13:18:29 ERROR grunt.Grunt: ERROR 1045: <line 23, column 70> Could not infer the matching function for org.apache.pig.builtin.SUM as multiple or none of them fit. Please use an explicit cast.
+Details at logfile: /mnt/var/log/pig/pig_1588422078717.log
+grunt> clear
+
+
+grunt> investors_group_by_name = GROUP investors_total_stock_price by (name,lastname);
+grunt> describe investors_group_by_name;
+investors_group_by_name: {group: (investors::name: chararray,investors::lastname: chararray),investors_total_stock_price: {(investors::name: chararray,investors::lastname: chararray,total_amount_price: int)}}
+grunt> dump investors_group_by_name;
+3531911 [main] INFO  org.apache.pig.tools.pigstats.ScriptState  - Pig features used in the script: HASH_JOIN,GROUP_BY
+20/05/02 13:20:10 INFO pigstats.ScriptState: Pig features used in the script: HASH_JOIN,GROUP_BY
+3531932 [main] INFO  org.apache.pig.data.SchemaTupleBackend  - Key [pig.schematuple] was not set... will not generate code.
+20/05/02 13:20:10 INFO data.SchemaTupleBackend: Key [pig.schematuple] was not set... will not generate code.
+3531932 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer  - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, NestedLimitOptimizer, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+20/05/02 13:20:10 INFO optimizer.LogicalPlanOptimizer: {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, NestedLimitOptimizer, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+3531933 [main] INFO  org.apache.pig.newplan.logical.rules.ColumnPruneVisitor  - Columns pruned for investors: $0
+20/05/02 13:20:10 INFO rules.ColumnPruneVisitor: Columns pruned for investors: $0
+3531953 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezLauncher  - Tez staging directory is /tmp/temp759499529 and resources directory is /tmp/temp759499529
+20/05/02 13:20:10 INFO tez.TezLauncher: Tez staging directory is /tmp/temp759499529 and resources directory is /tmp/temp759499529
+3531953 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.plan.TezCompiler  - File concatenation threshold: 100 optimistic? false
+20/05/02 13:20:10 INFO plan.TezCompiler: File concatenation threshold: 100 optimistic? false
+3531961 [main] INFO  org.apache.pig.builtin.PigStorage  - Using PigTextInputFormat
+20/05/02 13:20:10 INFO builtin.PigStorage: Using PigTextInputFormat
+20/05/02 13:20:10 INFO input.FileInputFormat: Total input files to process : 1
+3531961 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:20:10 INFO util.MapRedUtil: Total input paths to process : 1
+3531963 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths (combined) to process : 1
+20/05/02 13:20:10 INFO util.MapRedUtil: Total input paths (combined) to process : 1
+20/05/02 13:20:10 INFO hadoop.MRInputHelpers: NumSplits: 1, SerializedSize: 396
+3531973 [main] INFO  org.apache.pig.builtin.PigStorage  - Using PigTextInputFormat
+20/05/02 13:20:10 INFO builtin.PigStorage: Using PigTextInputFormat
+20/05/02 13:20:10 INFO input.FileInputFormat: Total input files to process : 1
+3531973 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:20:10 INFO util.MapRedUtil: Total input paths to process : 1
+3531974 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths (combined) to process : 1
+20/05/02 13:20:10 INFO util.MapRedUtil: Total input paths (combined) to process : 1
+20/05/02 13:20:10 INFO hadoop.MRInputHelpers: NumSplits: 1, SerializedSize: 399
+3531979 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: joda-time-2.9.4.jar
+20/05/02 13:20:10 INFO tez.TezJobCompiler: Local resource: joda-time-2.9.4.jar
+3531980 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: pig-0.17.0-core-h2.jar
+20/05/02 13:20:10 INFO tez.TezJobCompiler: Local resource: pig-0.17.0-core-h2.jar
+3531980 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: antlr-runtime-3.4.jar
+20/05/02 13:20:10 INFO tez.TezJobCompiler: Local resource: antlr-runtime-3.4.jar
+3531980 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: automaton-1.11-8.jar
+20/05/02 13:20:10 INFO tez.TezJobCompiler: Local resource: automaton-1.11-8.jar
+3532018 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-611: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:20:10 INFO tez.TezDagBuilder: For vertex - scope-611: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3532018 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors,investors_stock_prices
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Processing aliases: investors,investors_stock_prices
+3532018 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: investors[1,12],investors[-1,-1],investors_stock_prices[3,25]
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Detailed locations: investors[1,12],investors[-1,-1],investors_stock_prices[3,25]
+3532018 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Pig features in the vertex:
+3532035 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-612: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:20:10 INFO tez.TezDagBuilder: For vertex - scope-612: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3532035 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors_stock_prices,stock_prices
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Processing aliases: investors_stock_prices,stock_prices
+3532035 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: stock_prices[2,15],stock_prices[-1,-1],investors_stock_prices[3,25]
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Detailed locations: stock_prices[2,15],stock_prices[-1,-1],investors_stock_prices[3,25]
+3532036 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Pig features in the vertex:
+3532054 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Set auto parallelism for vertex scope-613
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Set auto parallelism for vertex scope-613
+3532054 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-613: parallelism=2, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:20:10 INFO tez.TezDagBuilder: For vertex - scope-613: parallelism=2, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3532054 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors_group_by_name,investors_stock_prices,investors_total_stock_price
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Processing aliases: investors_group_by_name,investors_stock_prices,investors_total_stock_price
+3532054 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: investors_stock_prices[3,25],investors_total_stock_price[20,30],investors_group_by_name[23,26]
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Detailed locations: investors_stock_prices[3,25],investors_total_stock_price[20,30],investors_group_by_name[23,26]
+3532054 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: HASH_JOIN
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Pig features in the vertex: HASH_JOIN
+3532074 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Set auto parallelism for vertex scope-614
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Set auto parallelism for vertex scope-614
+3532074 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-614: parallelism=20, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:20:10 INFO tez.TezDagBuilder: For vertex - scope-614: parallelism=20, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3532074 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases:
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Processing aliases:
+3532074 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations:
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Detailed locations:
+3532074 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: GROUP_BY
+20/05/02 13:20:10 INFO tez.TezDagBuilder: Pig features in the vertex: GROUP_BY
+3532087 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Total estimated parallelism is 24
+20/05/02 13:20:10 INFO tez.TezJobCompiler: Total estimated parallelism is 24
+3532119 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - Submitting DAG PigLatin:DefaultJobName-0_scope-30
+20/05/02 13:20:10 INFO tez.TezJob: Submitting DAG PigLatin:DefaultJobName-0_scope-30
+20/05/02 13:20:10 INFO client.TezClient: Submitting dag to TezSession, sessionName=PigLatin:DefaultJobName, applicationId=application_1588421329272_0006, dagName=PigLatin:DefaultJobName-0_scope-30, callerContext={ context=PIG, callerType=PIG_SCRIPT_ID, callerId=PIG-default-c3048a7c-c646-4669-9c8d-af100590b1bf }
+20/05/02 13:20:10 INFO client.TezClient: Submitted dag to TezSession, sessionName=PigLatin:DefaultJobName, applicationId=application_1588421329272_0006, dagId=dag_1588421329272_0006_4, dagName=PigLatin:DefaultJobName-0_scope-30
+3532171 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - Submitted DAG PigLatin:DefaultJobName-0_scope-30. Application id: application_1588421329272_0006
+20/05/02 13:20:10 INFO tez.TezJob: Submitted DAG PigLatin:DefaultJobName-0_scope-30. Application id: application_1588421329272_0006
+3533113 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezLauncher  - HadoopJobId: job_1588421329272_0006
+20/05/02 13:20:11 INFO tez.TezLauncher: HadoopJobId: job_1588421329272_0006
+3533171 [Timer-15] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - DAG Status: status=RUNNING, progress=TotalTasks: 3 Succeeded: 0 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=null
+20/05/02 13:20:11 INFO tez.TezJob: DAG Status: status=RUNNING, progress=TotalTasks: 3 Succeeded: 0 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=null
+3541195 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - DAG Status: status=SUCCEEDED, progress=TotalTasks: 4 Succeeded: 4 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=Counters: 58
+        org.apache.tez.common.counters.DAGCounter
+                NUM_SUCCEEDED_TASKS=4
+                TOTAL_LAUNCHED_TASKS=4
+                DATA_LOCAL_TASKS=1
+                RACK_LOCAL_TASKS=1
+                AM_CPU_MILLISECONDS=490
+                AM_GC_TIME_MILLIS=0
+        File System Counters
+                FILE_BYTES_READ=9840
+                FILE_BYTES_WRITTEN=1848
+                FILE_READ_OPS=0
+                FILE_LARGE_READ_OPS=0
+                FILE_WRITE_OPS=0
+                HDFS_BYTES_READ=782
+                HDFS_BYTES_WRITTEN=861
+                HDFS_READ_OPS=5
+                HDFS_LARGE_READ_OPS=0
+                HDFS_WRITE_OPS=2
+        org.apache.tez.common.counters.TaskCounter
+                REDUCE_INPUT_GROUPS=20
+                REDUCE_INPUT_RECORDS=59
+                COMBINE_INPUT_RECORDS=0
+                SPILLED_RECORDS=118
+                NUM_SHUFFLED_INPUTS=13
+                NUM_SKIPPED_INPUTS=11
+                NUM_FAILED_SHUFFLE_INPUTS=0
+                MERGED_MAP_OUTPUTS=13
+                GC_TIME_MILLIS=274
+                CPU_MILLISECONDS=7180
+                PHYSICAL_MEMORY_BYTES=1259339776
+                VIRTUAL_MEMORY_BYTES=23312486400
+                COMMITTED_HEAP_BYTES=1259339776
+                INPUT_RECORDS_PROCESSED=32
+                INPUT_SPLIT_LENGTH_BYTES=782
+                OUTPUT_RECORDS=69
+                OUTPUT_LARGE_RECORDS=0
+                OUTPUT_BYTES=1598
+                OUTPUT_BYTES_WITH_OVERHEAD=1298
+                OUTPUT_BYTES_PHYSICAL=1248
+                ADDITIONAL_SPILLS_BYTES_WRITTEN=0
+                ADDITIONAL_SPILLS_BYTES_READ=1248
+                ADDITIONAL_SPILL_COUNT=0
+                SHUFFLE_CHUNK_COUNT=3
+                SHUFFLE_BYTES=1248
+                SHUFFLE_BYTES_DECOMPRESSED=1298
+                SHUFFLE_BYTES_TO_MEM=0
+                SHUFFLE_BYTES_TO_DISK=0
+                SHUFFLE_BYTES_DISK_DIRECT=1248
+                NUM_MEM_TO_DISK_MERGES=0
+                NUM_DISK_TO_DISK_MERGES=0
+                SHUFFLE_PHASE_TIME=258
+                MERGE_PHASE_TIME=374
+                FIRST_EVENT_RECEIVED=143
+                LAST_EVENT_RECEIVED=143
+        MultiStoreCounters
+                Output records in _0_tmp810078556=10
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+20/05/02 13:20:19 INFO tez.TezJob: DAG Status: status=SUCCEEDED, progress=TotalTasks: 4 Succeeded: 4 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=Counters: 58
+        org.apache.tez.common.counters.DAGCounter
+                NUM_SUCCEEDED_TASKS=4
+                TOTAL_LAUNCHED_TASKS=4
+                DATA_LOCAL_TASKS=1
+                RACK_LOCAL_TASKS=1
+                AM_CPU_MILLISECONDS=490
+                AM_GC_TIME_MILLIS=0
+        File System Counters
+                FILE_BYTES_READ=9840
+                FILE_BYTES_WRITTEN=1848
+                FILE_READ_OPS=0
+                FILE_LARGE_READ_OPS=0
+                FILE_WRITE_OPS=0
+                HDFS_BYTES_READ=782
+                HDFS_BYTES_WRITTEN=861
+                HDFS_READ_OPS=5
+                HDFS_LARGE_READ_OPS=0
+                HDFS_WRITE_OPS=2
+        org.apache.tez.common.counters.TaskCounter
+                REDUCE_INPUT_GROUPS=20
+                REDUCE_INPUT_RECORDS=59
+                COMBINE_INPUT_RECORDS=0
+                SPILLED_RECORDS=118
+                NUM_SHUFFLED_INPUTS=13
+                NUM_SKIPPED_INPUTS=11
+                NUM_FAILED_SHUFFLE_INPUTS=0
+                MERGED_MAP_OUTPUTS=13
+                GC_TIME_MILLIS=274
+                CPU_MILLISECONDS=7180
+                PHYSICAL_MEMORY_BYTES=1259339776
+                VIRTUAL_MEMORY_BYTES=23312486400
+                COMMITTED_HEAP_BYTES=1259339776
+                INPUT_RECORDS_PROCESSED=32
+                INPUT_SPLIT_LENGTH_BYTES=782
+                OUTPUT_RECORDS=69
+                OUTPUT_LARGE_RECORDS=0
+                OUTPUT_BYTES=1598
+                OUTPUT_BYTES_WITH_OVERHEAD=1298
+                OUTPUT_BYTES_PHYSICAL=1248
+                ADDITIONAL_SPILLS_BYTES_WRITTEN=0
+                ADDITIONAL_SPILLS_BYTES_READ=1248
+                ADDITIONAL_SPILL_COUNT=0
+                SHUFFLE_CHUNK_COUNT=3
+                SHUFFLE_BYTES=1248
+                SHUFFLE_BYTES_DECOMPRESSED=1298
+                SHUFFLE_BYTES_TO_MEM=0
+                SHUFFLE_BYTES_TO_DISK=0
+                SHUFFLE_BYTES_DISK_DIRECT=1248
+                NUM_MEM_TO_DISK_MERGES=0
+                NUM_DISK_TO_DISK_MERGES=0
+                SHUFFLE_PHASE_TIME=258
+                MERGE_PHASE_TIME=374
+                FIRST_EVENT_RECEIVED=143
+                LAST_EVENT_RECEIVED=143
+        MultiStoreCounters
+                Output records in _0_tmp810078556=10
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+3542114 [main] INFO  org.apache.pig.tools.pigstats.tez.TezPigScriptStats  - Script Statistics:
+
+       HadoopVersion: 2.8.5-amzn-5
+          PigVersion: 0.17.0
+          TezVersion: 0.9.2
+              UserId: hadoop
+            FileName:
+           StartedAt: 2020-05-02 13:20:10
+          FinishedAt: 2020-05-02 13:20:20
+            Features: HASH_JOIN,GROUP_BY
+
+Success!
+
+
+DAG 0:
+                                    Name: PigLatin:DefaultJobName-0_scope-30
+                           ApplicationId: job_1588421329272_0006
+                      TotalLaunchedTasks: 4
+                           FileBytesRead: 9840
+                        FileBytesWritten: 1848
+                           HdfsBytesRead: 782
+                        HdfsBytesWritten: 861
+      SpillableMemoryManager spill count: 0
+                Bags proactively spilled: 0
+             Records proactively spilled: 0
+
+DAG Plan:
+Tez vertex scope-611    ->      Tez vertex scope-613,
+Tez vertex scope-612    ->      Tez vertex scope-613,
+Tez vertex scope-613    ->      Tez vertex scope-614,
+Tez vertex scope-614
+
+Vertex Stats:
+VertexId Parallelism TotalTasks   InputRecords   ReduceInputRecords  OutputRecords  FileBytesRead FileBytesWritten  HdfsBytesRead HdfsBytesWritten Alias Feature Outputs
+scope-611          1          1             27                    0             27            112              583            748                0 investors,investors_stock_prices
+scope-612          1          1              5                    0              5            112              158             34                0 investors_stock_prices,stock_prices
+scope-613          2          1              0                   32             27           2276             1107              0                0 investors_group_by_name,investors_stock_prices,investors_total_stock_price    HASH_JOIN
+scope-614         -1          1              0                   27             10           7340                0              0              861       GROUP_BY        hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp810078556,
+
+Input(s):
+Successfully read 27 records (748 bytes) from: "/PIG/input/investor.txt"
+Successfully read 5 records (34 bytes) from: "/PIG/input/stockprices.txt"
+
+Output(s):
+Successfully stored 10 records (861 bytes) in: "hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp810078556"
+
+20/05/02 13:20:20 INFO tez.TezPigScriptStats: Script Statistics:
+
+       HadoopVersion: 2.8.5-amzn-5
+          PigVersion: 0.17.0
+          TezVersion: 0.9.2
+              UserId: hadoop
+            FileName:
+           StartedAt: 2020-05-02 13:20:10
+          FinishedAt: 2020-05-02 13:20:20
+            Features: HASH_JOIN,GROUP_BY
+
+Success!
+
+
+DAG 0:
+                                    Name: PigLatin:DefaultJobName-0_scope-30
+                           ApplicationId: job_1588421329272_0006
+                      TotalLaunchedTasks: 4
+                           FileBytesRead: 9840
+                        FileBytesWritten: 1848
+                           HdfsBytesRead: 782
+                        HdfsBytesWritten: 861
+      SpillableMemoryManager spill count: 0
+                Bags proactively spilled: 0
+             Records proactively spilled: 0
+
+DAG Plan:
+Tez vertex scope-611    ->      Tez vertex scope-613,
+Tez vertex scope-612    ->      Tez vertex scope-613,
+Tez vertex scope-613    ->      Tez vertex scope-614,
+Tez vertex scope-614
+
+Vertex Stats:
+VertexId Parallelism TotalTasks   InputRecords   ReduceInputRecords  OutputRecords  FileBytesRead FileBytesWritten  HdfsBytesRead HdfsBytesWritten Alias Feature Outputs
+scope-611          1          1             27                    0             27            112              583            748                0 investors,investors_stock_prices
+scope-612          1          1              5                    0              5            112              158             34                0 investors_stock_prices,stock_prices
+scope-613          2          1              0                   32             27           2276             1107              0                0 investors_group_by_name,investors_stock_prices,investors_total_stock_price    HASH_JOIN
+scope-614         -1          1              0                   27             10           7340                0              0              861       GROUP_BY        hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp810078556,
+
+Input(s):
+Successfully read 27 records (748 bytes) from: "/PIG/input/investor.txt"
+Successfully read 5 records (34 bytes) from: "/PIG/input/stockprices.txt"
+
+Output(s):
+Successfully stored 10 records (861 bytes) in: "hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp810078556"
+
+20/05/02 13:20:20 INFO input.FileInputFormat: Total input files to process : 1
+3542119 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:20:20 INFO util.MapRedUtil: Total input paths to process : 1
+((Joe,Chapman),{(Joe,Chapman,9720),(Joe,Chapman,5000),(Joe,Chapman,2875)})
+((Lisa,Butler),{(Lisa,Butler,9600),(Lisa,Butler,3125),(Lisa,Butler,119000)})
+((Brian,Johnston),{(Brian,Johnston,137700),(Brian,Johnston,10200)})
+((Gavin,Thomson),{(Gavin,Thomson,2880),(Gavin,Thomson,420)})
+((Megan,Clark),{(Megan,Clark,3120),(Megan,Clark,900),(Megan,Clark,8800)})
+((Pippa,Dickens),{(Pippa,Dickens,6000),(Pippa,Dickens,13440)})
+((Amanda,Piper),{(Amanda,Piper,35700),(Amanda,Piper,1680),(Amanda,Piper,9000)})
+((Andrea,Arnold),{(Andrea,Arnold,5200),(Andrea,Arnold,780),(Andrea,Arnold,2625)})
+((Jessica,Henderson),{(Jessica,Henderson,34000),(Jessica,Henderson,10080),(Jessica,Henderson,7600)})
+((Vanessa,Robertson),{(Vanessa,Robertson,6875),(Vanessa,Robertson,148750),(Vanessa,Robertson,12000)})
+grunt>
+grunt> total_dollar_amount = FOREACH investors_group_by_name GENERATE group, SUM(investors_total_stock_price.total_amount_price) as total_amount_of_dollars_spent;
+grunt> dump total_amount_of_dollars_spent;
+3626558 [main] ERROR org.apache.pig.tools.grunt.Grunt  - ERROR 1003: Unable to find an operator for alias total_amount_of_dollars_spent
+20/05/02 13:21:45 ERROR grunt.Grunt: ERROR 1003: Unable to find an operator for alias total_amount_of_dollars_spent
+Details at logfile: /mnt/var/log/pig/pig_1588422078717.log
+grunt> total_dollar_amount = FOREACH investors_group_by_name GENERATE group, SUM(investors_total_stock_price.total_amount_price) as total_amount_of_dollars_spent;
+grunt> describe total_amount_of_dollars_spent;
+3650330 [main] ERROR org.apache.pig.tools.grunt.Grunt  - ERROR 1003: Unable to find an operator for alias total_amount_of_dollars_spent
+20/05/02 13:22:09 ERROR grunt.Grunt: ERROR 1003: Unable to find an operator for alias total_amount_of_dollars_spent
+Details at logfile: /mnt/var/log/pig/pig_1588422078717.log
+grunt> dump total_dollar_amount;
+3675549 [main] INFO  org.apache.pig.tools.pigstats.ScriptState  - Pig features used in the script: HASH_JOIN,GROUP_BY
+20/05/02 13:22:34 INFO pigstats.ScriptState: Pig features used in the script: HASH_JOIN,GROUP_BY
+3675569 [main] INFO  org.apache.pig.data.SchemaTupleBackend  - Key [pig.schematuple] was not set... will not generate code.
+20/05/02 13:22:34 INFO data.SchemaTupleBackend: Key [pig.schematuple] was not set... will not generate code.
+3675570 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer  - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, NestedLimitOptimizer, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+20/05/02 13:22:34 INFO optimizer.LogicalPlanOptimizer: {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, NestedLimitOptimizer, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+3675570 [main] INFO  org.apache.pig.newplan.logical.rules.ColumnPruneVisitor  - Columns pruned for investors: $0
+20/05/02 13:22:34 INFO rules.ColumnPruneVisitor: Columns pruned for investors: $0
+3675588 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezLauncher  - Tez staging directory is /tmp/temp759499529 and resources directory is /tmp/temp759499529
+20/05/02 13:22:34 INFO tez.TezLauncher: Tez staging directory is /tmp/temp759499529 and resources directory is /tmp/temp759499529
+3675589 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.plan.TezCompiler  - File concatenation threshold: 100 optimistic? false
+20/05/02 13:22:34 INFO plan.TezCompiler: File concatenation threshold: 100 optimistic? false
+3675589 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.CombinerOptimizerUtil  - Choosing to move algebraic foreach to combiner
+20/05/02 13:22:34 INFO util.CombinerOptimizerUtil: Choosing to move algebraic foreach to combiner
+3675597 [main] INFO  org.apache.pig.builtin.PigStorage  - Using PigTextInputFormat
+20/05/02 13:22:34 INFO builtin.PigStorage: Using PigTextInputFormat
+20/05/02 13:22:34 INFO input.FileInputFormat: Total input files to process : 1
+3675597 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:22:34 INFO util.MapRedUtil: Total input paths to process : 1
+3675599 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths (combined) to process : 1
+20/05/02 13:22:34 INFO util.MapRedUtil: Total input paths (combined) to process : 1
+20/05/02 13:22:34 INFO hadoop.MRInputHelpers: NumSplits: 1, SerializedSize: 396
+3675605 [main] INFO  org.apache.pig.builtin.PigStorage  - Using PigTextInputFormat
+20/05/02 13:22:34 INFO builtin.PigStorage: Using PigTextInputFormat
+20/05/02 13:22:34 INFO input.FileInputFormat: Total input files to process : 1
+3675606 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:22:34 INFO util.MapRedUtil: Total input paths to process : 1
+3675607 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths (combined) to process : 1
+20/05/02 13:22:34 INFO util.MapRedUtil: Total input paths (combined) to process : 1
+20/05/02 13:22:34 INFO hadoop.MRInputHelpers: NumSplits: 1, SerializedSize: 399
+3675611 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: joda-time-2.9.4.jar
+20/05/02 13:22:34 INFO tez.TezJobCompiler: Local resource: joda-time-2.9.4.jar
+3675611 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: pig-0.17.0-core-h2.jar
+20/05/02 13:22:34 INFO tez.TezJobCompiler: Local resource: pig-0.17.0-core-h2.jar
+3675611 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: antlr-runtime-3.4.jar
+20/05/02 13:22:34 INFO tez.TezJobCompiler: Local resource: antlr-runtime-3.4.jar
+3675611 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: automaton-1.11-8.jar
+20/05/02 13:22:34 INFO tez.TezJobCompiler: Local resource: automaton-1.11-8.jar
+3675644 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-671: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:22:34 INFO tez.TezDagBuilder: For vertex - scope-671: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3675644 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors,investors_stock_prices
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Processing aliases: investors,investors_stock_prices
+3675644 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: investors[1,12],investors[-1,-1],investors_stock_prices[3,25]
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Detailed locations: investors[1,12],investors[-1,-1],investors_stock_prices[3,25]
+3675644 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Pig features in the vertex:
+3675661 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-672: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:22:34 INFO tez.TezDagBuilder: For vertex - scope-672: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3675661 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors_stock_prices,stock_prices
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Processing aliases: investors_stock_prices,stock_prices
+3675661 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: stock_prices[2,15],stock_prices[-1,-1],investors_stock_prices[3,25]
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Detailed locations: stock_prices[2,15],stock_prices[-1,-1],investors_stock_prices[3,25]
+3675661 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Pig features in the vertex:
+3675684 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Set auto parallelism for vertex scope-673
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Set auto parallelism for vertex scope-673
+3675684 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-673: parallelism=2, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:22:34 INFO tez.TezDagBuilder: For vertex - scope-673: parallelism=2, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3675684 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors_group_by_name,investors_stock_prices,investors_total_stock_price,total_dollar_amount
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Processing aliases: investors_group_by_name,investors_stock_prices,investors_total_stock_price,total_dollar_amount
+3675684 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: investors_stock_prices[3,25],investors_total_stock_price[20,30],total_dollar_amount[25,22],investors_group_by_name[23,26]
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Detailed locations: investors_stock_prices[3,25],investors_total_stock_price[20,30],total_dollar_amount[25,22],investors_group_by_name[23,26]
+3675684 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: HASH_JOIN
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Pig features in the vertex: HASH_JOIN
+3675707 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Set auto parallelism for vertex scope-674
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Set auto parallelism for vertex scope-674
+3675707 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-674: parallelism=14, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:22:34 INFO tez.TezDagBuilder: For vertex - scope-674: parallelism=14, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3675707 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: total_dollar_amount
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Processing aliases: total_dollar_amount
+3675707 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: total_dollar_amount[25,22]
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Detailed locations: total_dollar_amount[25,22]
+3675707 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: GROUP_BY
+20/05/02 13:22:34 INFO tez.TezDagBuilder: Pig features in the vertex: GROUP_BY
+3675730 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Total estimated parallelism is 18
+20/05/02 13:22:34 INFO tez.TezJobCompiler: Total estimated parallelism is 18
+3675756 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - Submitting DAG PigLatin:DefaultJobName-0_scope-32
+20/05/02 13:22:34 INFO tez.TezJob: Submitting DAG PigLatin:DefaultJobName-0_scope-32
+20/05/02 13:22:34 INFO client.TezClient: Submitting dag to TezSession, sessionName=PigLatin:DefaultJobName, applicationId=application_1588421329272_0006, dagName=PigLatin:DefaultJobName-0_scope-32, callerContext={ context=PIG, callerType=PIG_SCRIPT_ID, callerId=PIG-default-c3048a7c-c646-4669-9c8d-af100590b1bf }
+20/05/02 13:22:34 INFO client.TezClient: Submitted dag to TezSession, sessionName=PigLatin:DefaultJobName, applicationId=application_1588421329272_0006, dagId=dag_1588421329272_0006_5, dagName=PigLatin:DefaultJobName-0_scope-32
+3675815 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - Submitted DAG PigLatin:DefaultJobName-0_scope-32. Application id: application_1588421329272_0006
+20/05/02 13:22:34 INFO tez.TezJob: Submitted DAG PigLatin:DefaultJobName-0_scope-32. Application id: application_1588421329272_0006
+3676750 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezLauncher  - HadoopJobId: job_1588421329272_0006
+20/05/02 13:22:35 INFO tez.TezLauncher: HadoopJobId: job_1588421329272_0006
+3676816 [Timer-16] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - DAG Status: status=RUNNING, progress=TotalTasks: 3 Succeeded: 0 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=null
+20/05/02 13:22:35 INFO tez.TezJob: DAG Status: status=RUNNING, progress=TotalTasks: 3 Succeeded: 0 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=null
+3684863 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - DAG Status: status=SUCCEEDED, progress=TotalTasks: 4 Succeeded: 4 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=Counters: 59
+        org.apache.tez.common.counters.DAGCounter
+                NUM_SUCCEEDED_TASKS=4
+                TOTAL_LAUNCHED_TASKS=4
+                DATA_LOCAL_TASKS=2
+                AM_CPU_MILLISECONDS=480
+                AM_GC_TIME_MILLIS=34
+        File System Counters
+                FILE_BYTES_READ=6817
+                FILE_BYTES_WRITTEN=1632
+                FILE_READ_OPS=0
+                FILE_LARGE_READ_OPS=0
+                FILE_WRITE_OPS=0
+                HDFS_BYTES_READ=782
+                HDFS_BYTES_WRITTEN=272
+                HDFS_READ_OPS=5
+                HDFS_LARGE_READ_OPS=0
+                HDFS_WRITE_OPS=2
+        org.apache.tez.common.counters.TaskCounter
+                REDUCE_INPUT_GROUPS=20
+                REDUCE_INPUT_RECORDS=42
+                COMBINE_INPUT_RECORDS=0
+                SPILLED_RECORDS=84
+                NUM_SHUFFLED_INPUTS=12
+                NUM_SKIPPED_INPUTS=6
+                NUM_FAILED_SHUFFLE_INPUTS=0
+                MERGED_MAP_OUTPUTS=12
+                GC_TIME_MILLIS=181
+                CPU_MILLISECONDS=6900
+                PHYSICAL_MEMORY_BYTES=1302331392
+                VIRTUAL_MEMORY_BYTES=23323418624
+                COMMITTED_HEAP_BYTES=1302331392
+                INPUT_RECORDS_PROCESSED=32
+                INPUT_SPLIT_LENGTH_BYTES=782
+                OUTPUT_RECORDS=69
+                OUTPUT_LARGE_RECORDS=0
+                OUTPUT_BYTES=1625
+                OUTPUT_BYTES_WITH_OVERHEAD=1163
+                OUTPUT_BYTES_PHYSICAL=1096
+                ADDITIONAL_SPILLS_BYTES_WRITTEN=80
+                ADDITIONAL_SPILLS_BYTES_READ=1074
+                ADDITIONAL_SPILL_COUNT=0
+                SHUFFLE_CHUNK_COUNT=3
+                SHUFFLE_BYTES=1096
+                SHUFFLE_BYTES_DECOMPRESSED=1163
+                SHUFFLE_BYTES_TO_MEM=102
+                SHUFFLE_BYTES_TO_DISK=0
+                SHUFFLE_BYTES_DISK_DIRECT=994
+                NUM_MEM_TO_DISK_MERGES=0
+                NUM_DISK_TO_DISK_MERGES=0
+                SHUFFLE_PHASE_TIME=314
+                MERGE_PHASE_TIME=375
+                FIRST_EVENT_RECEIVED=69
+                LAST_EVENT_RECEIVED=69
+        MultiStoreCounters
+                Output records in _0_tmp1324177229=10
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        org.apache.hadoop.mapreduce.TaskCounter
+                COMBINE_INPUT_RECORDS=27
+                COMBINE_OUTPUT_RECORDS=10
+20/05/02 13:22:43 INFO tez.TezJob: DAG Status: status=SUCCEEDED, progress=TotalTasks: 4 Succeeded: 4 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=Counters: 59
+        org.apache.tez.common.counters.DAGCounter
+                NUM_SUCCEEDED_TASKS=4
+                TOTAL_LAUNCHED_TASKS=4
+                DATA_LOCAL_TASKS=2
+                AM_CPU_MILLISECONDS=480
+                AM_GC_TIME_MILLIS=34
+        File System Counters
+                FILE_BYTES_READ=6817
+                FILE_BYTES_WRITTEN=1632
+                FILE_READ_OPS=0
+                FILE_LARGE_READ_OPS=0
+                FILE_WRITE_OPS=0
+                HDFS_BYTES_READ=782
+                HDFS_BYTES_WRITTEN=272
+                HDFS_READ_OPS=5
+                HDFS_LARGE_READ_OPS=0
+                HDFS_WRITE_OPS=2
+        org.apache.tez.common.counters.TaskCounter
+                REDUCE_INPUT_GROUPS=20
+                REDUCE_INPUT_RECORDS=42
+                COMBINE_INPUT_RECORDS=0
+                SPILLED_RECORDS=84
+                NUM_SHUFFLED_INPUTS=12
+                NUM_SKIPPED_INPUTS=6
+                NUM_FAILED_SHUFFLE_INPUTS=0
+                MERGED_MAP_OUTPUTS=12
+                GC_TIME_MILLIS=181
+                CPU_MILLISECONDS=6900
+                PHYSICAL_MEMORY_BYTES=1302331392
+                VIRTUAL_MEMORY_BYTES=23323418624
+                COMMITTED_HEAP_BYTES=1302331392
+                INPUT_RECORDS_PROCESSED=32
+                INPUT_SPLIT_LENGTH_BYTES=782
+                OUTPUT_RECORDS=69
+                OUTPUT_LARGE_RECORDS=0
+                OUTPUT_BYTES=1625
+                OUTPUT_BYTES_WITH_OVERHEAD=1163
+                OUTPUT_BYTES_PHYSICAL=1096
+                ADDITIONAL_SPILLS_BYTES_WRITTEN=80
+                ADDITIONAL_SPILLS_BYTES_READ=1074
+                ADDITIONAL_SPILL_COUNT=0
+                SHUFFLE_CHUNK_COUNT=3
+                SHUFFLE_BYTES=1096
+                SHUFFLE_BYTES_DECOMPRESSED=1163
+                SHUFFLE_BYTES_TO_MEM=102
+                SHUFFLE_BYTES_TO_DISK=0
+                SHUFFLE_BYTES_DISK_DIRECT=994
+                NUM_MEM_TO_DISK_MERGES=0
+                NUM_DISK_TO_DISK_MERGES=0
+                SHUFFLE_PHASE_TIME=314
+                MERGE_PHASE_TIME=375
+                FIRST_EVENT_RECEIVED=69
+                LAST_EVENT_RECEIVED=69
+        MultiStoreCounters
+                Output records in _0_tmp1324177229=10
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        org.apache.hadoop.mapreduce.TaskCounter
+                COMBINE_INPUT_RECORDS=27
+                COMBINE_OUTPUT_RECORDS=10
+3685752 [main] INFO  org.apache.pig.tools.pigstats.tez.TezPigScriptStats  - Script Statistics:
+
+       HadoopVersion: 2.8.5-amzn-5
+          PigVersion: 0.17.0
+          TezVersion: 0.9.2
+              UserId: hadoop
+            FileName:
+           StartedAt: 2020-05-02 13:22:34
+          FinishedAt: 2020-05-02 13:22:44
+            Features: HASH_JOIN,GROUP_BY
+
+Success!
+
+
+DAG 0:
+                                    Name: PigLatin:DefaultJobName-0_scope-32
+                           ApplicationId: job_1588421329272_0006
+                      TotalLaunchedTasks: 4
+                           FileBytesRead: 6817
+                        FileBytesWritten: 1632
+                           HdfsBytesRead: 782
+                        HdfsBytesWritten: 272
+      SpillableMemoryManager spill count: 0
+                Bags proactively spilled: 0
+             Records proactively spilled: 0
+
+DAG Plan:
+Tez vertex scope-671    ->      Tez vertex scope-673,
+Tez vertex scope-672    ->      Tez vertex scope-673,
+Tez vertex scope-673    ->      Tez vertex scope-674,
+Tez vertex scope-674
+
+Vertex Stats:
+VertexId Parallelism TotalTasks   InputRecords   ReduceInputRecords  OutputRecords  FileBytesRead FileBytesWritten  HdfsBytesRead HdfsBytesWritten Alias Feature Outputs
+scope-671          1          1             27                    0             27            112              583            748                0 investors,investors_stock_prices
+scope-672          1          1              5                    0              5            112              158             34                0 investors_stock_prices,stock_prices
+scope-673          2          1              0                   32             27           1785              891              0                0 investors_group_by_name,investors_stock_prices,investors_total_stock_price,total_dollar_amount        HASH_JOIN
+scope-674         -1          1              0                   10             10           4808                0              0              272 total_dollar_amount   GROUP_BY        hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp1324177229,
+
+Input(s):
+Successfully read 5 records (34 bytes) from: "/PIG/input/stockprices.txt"
+Successfully read 27 records (748 bytes) from: "/PIG/input/investor.txt"
+
+Output(s):
+Successfully stored 10 records (272 bytes) in: "hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp1324177229"
+
+20/05/02 13:22:44 INFO tez.TezPigScriptStats: Script Statistics:
+
+       HadoopVersion: 2.8.5-amzn-5
+          PigVersion: 0.17.0
+          TezVersion: 0.9.2
+              UserId: hadoop
+            FileName:
+           StartedAt: 2020-05-02 13:22:34
+          FinishedAt: 2020-05-02 13:22:44
+            Features: HASH_JOIN,GROUP_BY
+
+Success!
+
+
+DAG 0:
+                                    Name: PigLatin:DefaultJobName-0_scope-32
+                           ApplicationId: job_1588421329272_0006
+                      TotalLaunchedTasks: 4
+                           FileBytesRead: 6817
+                        FileBytesWritten: 1632
+                           HdfsBytesRead: 782
+                        HdfsBytesWritten: 272
+      SpillableMemoryManager spill count: 0
+                Bags proactively spilled: 0
+             Records proactively spilled: 0
+
+DAG Plan:
+Tez vertex scope-671    ->      Tez vertex scope-673,
+Tez vertex scope-672    ->      Tez vertex scope-673,
+Tez vertex scope-673    ->      Tez vertex scope-674,
+Tez vertex scope-674
+
+Vertex Stats:
+VertexId Parallelism TotalTasks   InputRecords   ReduceInputRecords  OutputRecords  FileBytesRead FileBytesWritten  HdfsBytesRead HdfsBytesWritten Alias Feature Outputs
+scope-671          1          1             27                    0             27            112              583            748                0 investors,investors_stock_prices
+scope-672          1          1              5                    0              5            112              158             34                0 investors_stock_prices,stock_prices
+scope-673          2          1              0                   32             27           1785              891              0                0 investors_group_by_name,investors_stock_prices,investors_total_stock_price,total_dollar_amount        HASH_JOIN
+scope-674         -1          1              0                   10             10           4808                0              0              272 total_dollar_amount   GROUP_BY        hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp1324177229,
+
+Input(s):
+Successfully read 5 records (34 bytes) from: "/PIG/input/stockprices.txt"
+Successfully read 27 records (748 bytes) from: "/PIG/input/investor.txt"
+
+Output(s):
+Successfully stored 10 records (272 bytes) in: "hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp1324177229"
+
+20/05/02 13:22:44 INFO input.FileInputFormat: Total input files to process : 1
+3685756 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:22:44 INFO util.MapRedUtil: Total input paths to process : 1
+((Joe,Chapman),17595)
+((Lisa,Butler),131725)
+((Brian,Johnston),147900)
+((Gavin,Thomson),3300)
+((Megan,Clark),12820)
+((Pippa,Dickens),19440)
+((Amanda,Piper),46380)
+((Andrea,Arnold),8605)
+((Jessica,Henderson),51680)
+((Vanessa,Robertson),167625)
+grunt> describe total_dollar_amount;
+total_dollar_amount: {group: (investors::name: chararray,investors::lastname: chararray),total_amount_of_dollars_spent: long}
+grunt> ordered_list = ORDER total_dollar_amount BY TDA DESC;
+3775629 [main] ERROR org.apache.pig.tools.grunt.Grunt  - ERROR 1025: <line 26, column 44> Invalid field projection. Projected field [TDA] does not exist in schema: group:tuple(investors::name:chararray,investors::lastname:chararray),total_amount_of_dollars_spent:double.
+20/05/02 13:24:14 ERROR grunt.Grunt: ERROR 1025: <line 26, column 44> Invalid field projection. Projected field [TDA] does not exist in schema: group:tuple(investors::name:chararray,investors::lastname:chararray),total_amount_of_dollars_spent:double.
+Details at logfile: /mnt/var/log/pig/pig_1588422078717.log
+grunt> ordered_list = ORDER total_dollar_amount BY TDA DESC;
+3807795 [main] ERROR org.apache.pig.tools.grunt.Grunt  - ERROR 1025: <line 26, column 44> Invalid field projection. Projected field [TDA] does not exist in schema: group:tuple(investors::name:chararray,investors::lastname:chararray),total_amount_of_dollars_spent:double.
+20/05/02 13:24:46 ERROR grunt.Grunt: ERROR 1025: <line 26, column 44> Invalid field projection. Projected field [TDA] does not exist in schema: group:tuple(investors::name:chararray,investors::lastname:chararray),total_amount_of_dollars_spent:double.
+Details at logfile: /mnt/var/log/pig/pig_1588422078717.log
+grunt>
+grunt>
+grunt>
+grunt>
+grunt> ordered_list = ORDER total_dollar_amount BY total_amount_of_dollars_spent DESC;
+grunt> top_investors = LIMIT ordered_list 2;
+grunt> dump top_investors
+3848908 [main] INFO  org.apache.pig.tools.pigstats.ScriptState  - Pig features used in the script: HASH_JOIN,GROUP_BY,ORDER_BY,LIMIT
+20/05/02 13:25:27 INFO pigstats.ScriptState: Pig features used in the script: HASH_JOIN,GROUP_BY,ORDER_BY,LIMIT
+3848926 [main] INFO  org.apache.pig.data.SchemaTupleBackend  - Key [pig.schematuple] was not set... will not generate code.
+20/05/02 13:25:27 INFO data.SchemaTupleBackend: Key [pig.schematuple] was not set... will not generate code.
+3848926 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer  - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, NestedLimitOptimizer, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+20/05/02 13:25:27 INFO optimizer.LogicalPlanOptimizer: {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, NestedLimitOptimizer, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+3848927 [main] INFO  org.apache.pig.newplan.logical.rules.ColumnPruneVisitor  - Columns pruned for investors: $0
+20/05/02 13:25:27 INFO rules.ColumnPruneVisitor: Columns pruned for investors: $0
+3848946 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezLauncher  - Tez staging directory is /tmp/temp759499529 and resources directory is /tmp/temp759499529
+20/05/02 13:25:27 INFO tez.TezLauncher: Tez staging directory is /tmp/temp759499529 and resources directory is /tmp/temp759499529
+3848947 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.plan.TezCompiler  - File concatenation threshold: 100 optimistic? false
+20/05/02 13:25:27 INFO plan.TezCompiler: File concatenation threshold: 100 optimistic? false
+3848959 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.CombinerOptimizerUtil  - Choosing to move algebraic foreach to combiner
+20/05/02 13:25:27 INFO util.CombinerOptimizerUtil: Choosing to move algebraic foreach to combiner
+3848961 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.plan.optimizer.SecondaryKeyOptimizerTez  - Using Secondary Key Optimization in the edge between vertex - scope-757 and vertex - scope-766
+20/05/02 13:25:27 INFO optimizer.SecondaryKeyOptimizerTez: Using Secondary Key Optimization in the edge between vertex - scope-757 and vertex - scope-766
+3848968 [main] INFO  org.apache.pig.builtin.PigStorage  - Using PigTextInputFormat
+20/05/02 13:25:27 INFO builtin.PigStorage: Using PigTextInputFormat
+20/05/02 13:25:27 INFO input.FileInputFormat: Total input files to process : 1
+3848969 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:25:27 INFO util.MapRedUtil: Total input paths to process : 1
+3848970 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths (combined) to process : 1
+20/05/02 13:25:27 INFO util.MapRedUtil: Total input paths (combined) to process : 1
+20/05/02 13:25:27 INFO hadoop.MRInputHelpers: NumSplits: 1, SerializedSize: 396
+3848976 [main] INFO  org.apache.pig.builtin.PigStorage  - Using PigTextInputFormat
+20/05/02 13:25:27 INFO builtin.PigStorage: Using PigTextInputFormat
+20/05/02 13:25:27 INFO input.FileInputFormat: Total input files to process : 1
+3848977 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:25:27 INFO util.MapRedUtil: Total input paths to process : 1
+3848978 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths (combined) to process : 1
+20/05/02 13:25:27 INFO util.MapRedUtil: Total input paths (combined) to process : 1
+20/05/02 13:25:27 INFO hadoop.MRInputHelpers: NumSplits: 1, SerializedSize: 399
+3848983 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: joda-time-2.9.4.jar
+20/05/02 13:25:27 INFO tez.TezJobCompiler: Local resource: joda-time-2.9.4.jar
+3848983 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: pig-0.17.0-core-h2.jar
+20/05/02 13:25:27 INFO tez.TezJobCompiler: Local resource: pig-0.17.0-core-h2.jar
+3848983 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: antlr-runtime-3.4.jar
+20/05/02 13:25:27 INFO tez.TezJobCompiler: Local resource: antlr-runtime-3.4.jar
+3848983 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: automaton-1.11-8.jar
+20/05/02 13:25:27 INFO tez.TezJobCompiler: Local resource: automaton-1.11-8.jar
+3849018 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-754: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:25:27 INFO tez.TezDagBuilder: For vertex - scope-754: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3849018 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors,investors_stock_prices
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Processing aliases: investors,investors_stock_prices
+3849018 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: investors[1,12],investors[-1,-1],investors_stock_prices[3,25]
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Detailed locations: investors[1,12],investors[-1,-1],investors_stock_prices[3,25]
+3849018 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Pig features in the vertex:
+3849035 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-755: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:25:27 INFO tez.TezDagBuilder: For vertex - scope-755: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3849035 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors_stock_prices,stock_prices
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Processing aliases: investors_stock_prices,stock_prices
+3849035 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: stock_prices[2,15],stock_prices[-1,-1],investors_stock_prices[3,25]
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Detailed locations: stock_prices[2,15],stock_prices[-1,-1],investors_stock_prices[3,25]
+3849035 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Pig features in the vertex:
+3849054 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Set auto parallelism for vertex scope-756
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Set auto parallelism for vertex scope-756
+3849054 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-756: parallelism=2, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:25:27 INFO tez.TezDagBuilder: For vertex - scope-756: parallelism=2, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3849054 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors_group_by_name,investors_stock_prices,investors_total_stock_price,total_dollar_amount
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Processing aliases: investors_group_by_name,investors_stock_prices,investors_total_stock_price,total_dollar_amount
+3849054 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: investors_stock_prices[3,25],investors_total_stock_price[20,30],total_dollar_amount[25,22],investors_group_by_name[23,26]
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Detailed locations: investors_stock_prices[3,25],investors_total_stock_price[20,30],total_dollar_amount[25,22],investors_group_by_name[23,26]
+3849054 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: HASH_JOIN
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Pig features in the vertex: HASH_JOIN
+3849079 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Set auto parallelism for vertex scope-757
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Set auto parallelism for vertex scope-757
+3849079 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-757: parallelism=14, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:25:27 INFO tez.TezDagBuilder: For vertex - scope-757: parallelism=14, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3849079 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: ordered_list,total_dollar_amount
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Processing aliases: ordered_list,total_dollar_amount
+3849079 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: total_dollar_amount[25,22],ordered_list[26,15]
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Detailed locations: total_dollar_amount[25,22],ordered_list[26,15]
+3849079 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: GROUP_BY,SAMPLER
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Pig features in the vertex: GROUP_BY,SAMPLER
+3849100 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Estimate quantile for sample aggregation vertex scope-766
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Estimate quantile for sample aggregation vertex scope-766
+3849106 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-766: parallelism=1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:25:27 INFO tez.TezDagBuilder: For vertex - scope-766: parallelism=1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3849106 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases:
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Processing aliases:
+3849106 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations:
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Detailed locations:
+3849106 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Pig features in the vertex:
+3849120 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-776: parallelism=-1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:25:27 INFO tez.TezDagBuilder: For vertex - scope-776: parallelism=-1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3849121 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: ordered_list
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Processing aliases: ordered_list
+3849121 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: ordered_list[26,15]
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Detailed locations: ordered_list[26,15]
+3849121 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Pig features in the vertex:
+3849136 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Set VertexManagerPlugin to PartitionerDefinedParallelismVertexManager for vertex scope-778
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Set VertexManagerPlugin to PartitionerDefinedParallelismVertexManager for vertex scope-778
+3849136 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-778: parallelism=-1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:25:27 INFO tez.TezDagBuilder: For vertex - scope-778: parallelism=-1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3849136 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases:
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Processing aliases:
+3849136 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations:
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Detailed locations:
+3849136 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: ORDER_BY
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Pig features in the vertex: ORDER_BY
+3849149 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-789: parallelism=1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:25:27 INFO tez.TezDagBuilder: For vertex - scope-789: parallelism=1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3849149 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases:
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Processing aliases:
+3849149 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations:
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Detailed locations:
+3849149 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: LIMIT
+20/05/02 13:25:27 INFO tez.TezDagBuilder: Pig features in the vertex: LIMIT
+3849160 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Total estimated parallelism is 48
+20/05/02 13:25:27 INFO tez.TezJobCompiler: Total estimated parallelism is 48
+3849197 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - Submitting DAG PigLatin:DefaultJobName-0_scope-34
+20/05/02 13:25:27 INFO tez.TezJob: Submitting DAG PigLatin:DefaultJobName-0_scope-34
+20/05/02 13:25:27 INFO client.TezClient: Submitting dag to TezSession, sessionName=PigLatin:DefaultJobName, applicationId=application_1588421329272_0006, dagName=PigLatin:DefaultJobName-0_scope-34, callerContext={ context=PIG, callerType=PIG_SCRIPT_ID, callerId=PIG-default-c3048a7c-c646-4669-9c8d-af100590b1bf }
+20/05/02 13:25:27 INFO client.TezClient: Submitted dag to TezSession, sessionName=PigLatin:DefaultJobName, applicationId=application_1588421329272_0006, dagId=dag_1588421329272_0006_6, dagName=PigLatin:DefaultJobName-0_scope-34
+3849282 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - Submitted DAG PigLatin:DefaultJobName-0_scope-34. Application id: application_1588421329272_0006
+20/05/02 13:25:27 INFO tez.TezJob: Submitted DAG PigLatin:DefaultJobName-0_scope-34. Application id: application_1588421329272_0006
+3850189 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezLauncher  - HadoopJobId: job_1588421329272_0006
+20/05/02 13:25:28 INFO tez.TezLauncher: HadoopJobId: job_1588421329272_0006
+3850282 [Timer-17] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - DAG Status: status=RUNNING, progress=TotalTasks: 3 Succeeded: 0 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=null
+20/05/02 13:25:28 INFO tez.TezJob: DAG Status: status=RUNNING, progress=TotalTasks: 3 Succeeded: 0 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=null
+3858303 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - DAG Status: status=SUCCEEDED, progress=TotalTasks: 8 Succeeded: 8 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=Counters: 60
+        org.apache.tez.common.counters.DAGCounter
+                NUM_SUCCEEDED_TASKS=8
+                TOTAL_LAUNCHED_TASKS=8
+                OTHER_LOCAL_TASKS=1
+                RACK_LOCAL_TASKS=2
+                AM_CPU_MILLISECONDS=550
+                AM_GC_TIME_MILLIS=0
+        File System Counters
+                FILE_BYTES_READ=7636
+                FILE_BYTES_WRITTEN=3057
+                FILE_READ_OPS=0
+                FILE_LARGE_READ_OPS=0
+                FILE_WRITE_OPS=0
+                HDFS_BYTES_READ=782
+                HDFS_BYTES_WRITTEN=61
+                HDFS_READ_OPS=5
+                HDFS_LARGE_READ_OPS=0
+                HDFS_WRITE_OPS=2
+        org.apache.tez.common.counters.TaskCounter
+                REDUCE_INPUT_GROUPS=35
+                REDUCE_INPUT_RECORDS=56
+                COMBINE_INPUT_RECORDS=0
+                SPILLED_RECORDS=119
+                NUM_SHUFFLED_INPUTS=17
+                NUM_SKIPPED_INPUTS=6
+                NUM_FAILED_SHUFFLE_INPUTS=0
+                MERGED_MAP_OUTPUTS=15
+                GC_TIME_MILLIS=188
+                CPU_MILLISECONDS=8010
+                PHYSICAL_MEMORY_BYTES=3373793280
+                VIRTUAL_MEMORY_BYTES=51992059904
+                COMMITTED_HEAP_BYTES=3373793280
+                INPUT_RECORDS_PROCESSED=43
+                INPUT_SPLIT_LENGTH_BYTES=782
+                OUTPUT_RECORDS=94
+                OUTPUT_LARGE_RECORDS=0
+                OUTPUT_BYTES=2607
+                OUTPUT_BYTES_WITH_OVERHEAD=2241
+                OUTPUT_BYTES_PHYSICAL=2091
+                ADDITIONAL_SPILLS_BYTES_WRITTEN=422
+                ADDITIONAL_SPILLS_BYTES_READ=1527
+                ADDITIONAL_SPILL_COUNT=0
+                SHUFFLE_CHUNK_COUNT=5
+                SHUFFLE_BYTES=2019
+                SHUFFLE_BYTES_DECOMPRESSED=2241
+                SHUFFLE_BYTES_TO_MEM=527
+                SHUFFLE_BYTES_TO_DISK=0
+                SHUFFLE_BYTES_DISK_DIRECT=1492
+                NUM_MEM_TO_DISK_MERGES=0
+                NUM_DISK_TO_DISK_MERGES=0
+                SHUFFLE_PHASE_TIME=403
+                MERGE_PHASE_TIME=413
+                FIRST_EVENT_RECEIVED=121
+                LAST_EVENT_RECEIVED=121
+        MultiStoreCounters
+                Output records in _0_tmp743767924=2
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        org.apache.hadoop.mapreduce.TaskCounter
+                COMBINE_INPUT_RECORDS=27
+                COMBINE_OUTPUT_RECORDS=10
+20/05/02 13:25:36 INFO tez.TezJob: DAG Status: status=SUCCEEDED, progress=TotalTasks: 8 Succeeded: 8 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=Counters: 60
+        org.apache.tez.common.counters.DAGCounter
+                NUM_SUCCEEDED_TASKS=8
+                TOTAL_LAUNCHED_TASKS=8
+                OTHER_LOCAL_TASKS=1
+                RACK_LOCAL_TASKS=2
+                AM_CPU_MILLISECONDS=550
+                AM_GC_TIME_MILLIS=0
+        File System Counters
+                FILE_BYTES_READ=7636
+                FILE_BYTES_WRITTEN=3057
+                FILE_READ_OPS=0
+                FILE_LARGE_READ_OPS=0
+                FILE_WRITE_OPS=0
+                HDFS_BYTES_READ=782
+                HDFS_BYTES_WRITTEN=61
+                HDFS_READ_OPS=5
+                HDFS_LARGE_READ_OPS=0
+                HDFS_WRITE_OPS=2
+        org.apache.tez.common.counters.TaskCounter
+                REDUCE_INPUT_GROUPS=35
+                REDUCE_INPUT_RECORDS=56
+                COMBINE_INPUT_RECORDS=0
+                SPILLED_RECORDS=119
+                NUM_SHUFFLED_INPUTS=17
+                NUM_SKIPPED_INPUTS=6
+                NUM_FAILED_SHUFFLE_INPUTS=0
+                MERGED_MAP_OUTPUTS=15
+                GC_TIME_MILLIS=188
+                CPU_MILLISECONDS=8010
+                PHYSICAL_MEMORY_BYTES=3373793280
+                VIRTUAL_MEMORY_BYTES=51992059904
+                COMMITTED_HEAP_BYTES=3373793280
+                INPUT_RECORDS_PROCESSED=43
+                INPUT_SPLIT_LENGTH_BYTES=782
+                OUTPUT_RECORDS=94
+                OUTPUT_LARGE_RECORDS=0
+                OUTPUT_BYTES=2607
+                OUTPUT_BYTES_WITH_OVERHEAD=2241
+                OUTPUT_BYTES_PHYSICAL=2091
+                ADDITIONAL_SPILLS_BYTES_WRITTEN=422
+                ADDITIONAL_SPILLS_BYTES_READ=1527
+                ADDITIONAL_SPILL_COUNT=0
+                SHUFFLE_CHUNK_COUNT=5
+                SHUFFLE_BYTES=2019
+                SHUFFLE_BYTES_DECOMPRESSED=2241
+                SHUFFLE_BYTES_TO_MEM=527
+                SHUFFLE_BYTES_TO_DISK=0
+                SHUFFLE_BYTES_DISK_DIRECT=1492
+                NUM_MEM_TO_DISK_MERGES=0
+                NUM_DISK_TO_DISK_MERGES=0
+                SHUFFLE_PHASE_TIME=403
+                MERGE_PHASE_TIME=413
+                FIRST_EVENT_RECEIVED=121
+                LAST_EVENT_RECEIVED=121
+        MultiStoreCounters
+                Output records in _0_tmp743767924=2
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        org.apache.hadoop.mapreduce.TaskCounter
+                COMBINE_INPUT_RECORDS=27
+                COMBINE_OUTPUT_RECORDS=10
+3859190 [main] INFO  org.apache.pig.tools.pigstats.tez.TezPigScriptStats  - Script Statistics:
+
+       HadoopVersion: 2.8.5-amzn-5
+          PigVersion: 0.17.0
+          TezVersion: 0.9.2
+              UserId: hadoop
+            FileName:
+           StartedAt: 2020-05-02 13:25:27
+          FinishedAt: 2020-05-02 13:25:37
+            Features: HASH_JOIN,GROUP_BY,ORDER_BY,LIMIT
+
+Success!
+
+
+DAG 0:
+                                    Name: PigLatin:DefaultJobName-0_scope-34
+                           ApplicationId: job_1588421329272_0006
+                      TotalLaunchedTasks: 8
+                           FileBytesRead: 7636
+                        FileBytesWritten: 3057
+                           HdfsBytesRead: 782
+                        HdfsBytesWritten: 61
+      SpillableMemoryManager spill count: 0
+                Bags proactively spilled: 0
+             Records proactively spilled: 0
+
+DAG Plan:
+Tez vertex scope-754    ->      Tez vertex scope-756,
+Tez vertex scope-755    ->      Tez vertex scope-756,
+Tez vertex scope-756    ->      Tez vertex scope-757,
+Tez vertex scope-757    ->      Tez vertex scope-766,Tez vertex scope-776,
+Tez vertex scope-766    ->      Tez vertex scope-776,
+Tez vertex scope-776    ->      Tez vertex scope-778,
+Tez vertex scope-778    ->      Tez vertex scope-789,
+Tez vertex scope-789
+
+Vertex Stats:
+VertexId Parallelism TotalTasks   InputRecords   ReduceInputRecords  OutputRecords  FileBytesRead FileBytesWritten  HdfsBytesRead HdfsBytesWritten Alias Feature Outputs
+scope-754          1          1             27                    0             27            112              583            748                0 investors,investors_stock_prices
+scope-755          1          1              5                    0              5            112              158             34                0 investors_stock_prices,stock_prices
+scope-756          2          1              0                   32             27           1393             1233              0                0 investors_group_by_name,investors_stock_prices,investors_total_stock_price,total_dollar_amount        HASH_JOIN
+scope-757         -1          1              0                   10             20           4872              507              0                0 ordered_list,total_dollar_amount      GROUP_BY,SAMPLER
+scope-766          1          1              0                   10              1            197              141              0                0
+scope-776         -1          1             11                    0             10            515              317              0                0 ordered_list
+scope-778         -1          1              0                    2              2            317              118              0                0       ORDER_BY
+scope-789          1          1              0                    2              2            118                0              0               61       LIMIT   hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp743767924,
+
+Input(s):
+Successfully read 27 records (748 bytes) from: "/PIG/input/investor.txt"
+Successfully read 5 records (34 bytes) from: "/PIG/input/stockprices.txt"
+
+Output(s):
+Successfully stored 2 records (61 bytes) in: "hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp743767924"
+
+20/05/02 13:25:37 INFO tez.TezPigScriptStats: Script Statistics:
+
+       HadoopVersion: 2.8.5-amzn-5
+          PigVersion: 0.17.0
+          TezVersion: 0.9.2
+              UserId: hadoop
+            FileName:
+           StartedAt: 2020-05-02 13:25:27
+          FinishedAt: 2020-05-02 13:25:37
+            Features: HASH_JOIN,GROUP_BY,ORDER_BY,LIMIT
+
+Success!
+
+
+DAG 0:
+                                    Name: PigLatin:DefaultJobName-0_scope-34
+                           ApplicationId: job_1588421329272_0006
+                      TotalLaunchedTasks: 8
+                           FileBytesRead: 7636
+                        FileBytesWritten: 3057
+                           HdfsBytesRead: 782
+                        HdfsBytesWritten: 61
+      SpillableMemoryManager spill count: 0
+                Bags proactively spilled: 0
+             Records proactively spilled: 0
+
+DAG Plan:
+Tez vertex scope-754    ->      Tez vertex scope-756,
+Tez vertex scope-755    ->      Tez vertex scope-756,
+Tez vertex scope-756    ->      Tez vertex scope-757,
+Tez vertex scope-757    ->      Tez vertex scope-766,Tez vertex scope-776,
+Tez vertex scope-766    ->      Tez vertex scope-776,
+Tez vertex scope-776    ->      Tez vertex scope-778,
+Tez vertex scope-778    ->      Tez vertex scope-789,
+Tez vertex scope-789
+
+Vertex Stats:
+VertexId Parallelism TotalTasks   InputRecords   ReduceInputRecords  OutputRecords  FileBytesRead FileBytesWritten  HdfsBytesRead HdfsBytesWritten Alias Feature Outputs
+scope-754          1          1             27                    0             27            112              583            748                0 investors,investors_stock_prices
+scope-755          1          1              5                    0              5            112              158             34                0 investors_stock_prices,stock_prices
+scope-756          2          1              0                   32             27           1393             1233              0                0 investors_group_by_name,investors_stock_prices,investors_total_stock_price,total_dollar_amount        HASH_JOIN
+scope-757         -1          1              0                   10             20           4872              507              0                0 ordered_list,total_dollar_amount      GROUP_BY,SAMPLER
+scope-766          1          1              0                   10              1            197              141              0                0
+scope-776         -1          1             11                    0             10            515              317              0                0 ordered_list
+scope-778         -1          1              0                    2              2            317              118              0                0       ORDER_BY
+scope-789          1          1              0                    2              2            118                0              0               61       LIMIT   hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp743767924,
+
+Input(s):
+Successfully read 27 records (748 bytes) from: "/PIG/input/investor.txt"
+Successfully read 5 records (34 bytes) from: "/PIG/input/stockprices.txt"
+
+Output(s):
+Successfully stored 2 records (61 bytes) in: "hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp743767924"
+
+20/05/02 13:25:37 INFO input.FileInputFormat: Total input files to process : 1
+3859195 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:25:37 INFO util.MapRedUtil: Total input paths to process : 1
+((Vanessa,Robertson),167625)
+((Brian,Johnston),147900)
+grunt> ordered_list = ORDER total_dollar_amount BY total_amount_of_dollars_spent DESC;
+grunt> dump ordered_list;
+3900495 [main] INFO  org.apache.pig.tools.pigstats.ScriptState  - Pig features used in the script: HASH_JOIN,GROUP_BY,ORDER_BY
+20/05/02 13:26:19 INFO pigstats.ScriptState: Pig features used in the script: HASH_JOIN,GROUP_BY,ORDER_BY
+3900514 [main] INFO  org.apache.pig.data.SchemaTupleBackend  - Key [pig.schematuple] was not set... will not generate code.
+20/05/02 13:26:19 INFO data.SchemaTupleBackend: Key [pig.schematuple] was not set... will not generate code.
+3900514 [main] INFO  org.apache.pig.newplan.logical.optimizer.LogicalPlanOptimizer  - {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, NestedLimitOptimizer, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+20/05/02 13:26:19 INFO optimizer.LogicalPlanOptimizer: {RULES_ENABLED=[AddForEach, ColumnMapKeyPrune, ConstantCalculator, GroupByConstParallelSetter, LimitOptimizer, LoadTypeCastInserter, MergeFilter, MergeForEach, NestedLimitOptimizer, PartitionFilterOptimizer, PredicatePushdownOptimizer, PushDownForEachFlatten, PushUpFilter, SplitFilter, StreamTypeCastInserter]}
+3900515 [main] INFO  org.apache.pig.newplan.logical.rules.ColumnPruneVisitor  - Columns pruned for investors: $0
+20/05/02 13:26:19 INFO rules.ColumnPruneVisitor: Columns pruned for investors: $0
+3900533 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezLauncher  - Tez staging directory is /tmp/temp759499529 and resources directory is /tmp/temp759499529
+20/05/02 13:26:19 INFO tez.TezLauncher: Tez staging directory is /tmp/temp759499529 and resources directory is /tmp/temp759499529
+3900533 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.plan.TezCompiler  - File concatenation threshold: 100 optimistic? false
+20/05/02 13:26:19 INFO plan.TezCompiler: File concatenation threshold: 100 optimistic? false
+3900534 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.CombinerOptimizerUtil  - Choosing to move algebraic foreach to combiner
+20/05/02 13:26:19 INFO util.CombinerOptimizerUtil: Choosing to move algebraic foreach to combiner
+3900535 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.plan.optimizer.SecondaryKeyOptimizerTez  - Using Secondary Key Optimization in the edge between vertex - scope-875 and vertex - scope-884
+20/05/02 13:26:19 INFO optimizer.SecondaryKeyOptimizerTez: Using Secondary Key Optimization in the edge between vertex - scope-875 and vertex - scope-884
+3900541 [main] INFO  org.apache.pig.builtin.PigStorage  - Using PigTextInputFormat
+20/05/02 13:26:19 INFO builtin.PigStorage: Using PigTextInputFormat
+20/05/02 13:26:19 INFO input.FileInputFormat: Total input files to process : 1
+3900542 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:26:19 INFO util.MapRedUtil: Total input paths to process : 1
+3900543 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths (combined) to process : 1
+20/05/02 13:26:19 INFO util.MapRedUtil: Total input paths (combined) to process : 1
+20/05/02 13:26:19 INFO hadoop.MRInputHelpers: NumSplits: 1, SerializedSize: 396
+3900550 [main] INFO  org.apache.pig.builtin.PigStorage  - Using PigTextInputFormat
+20/05/02 13:26:19 INFO builtin.PigStorage: Using PigTextInputFormat
+20/05/02 13:26:19 INFO input.FileInputFormat: Total input files to process : 1
+3900550 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:26:19 INFO util.MapRedUtil: Total input paths to process : 1
+3900551 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths (combined) to process : 1
+20/05/02 13:26:19 INFO util.MapRedUtil: Total input paths (combined) to process : 1
+20/05/02 13:26:19 INFO hadoop.MRInputHelpers: NumSplits: 1, SerializedSize: 399
+3900560 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: joda-time-2.9.4.jar
+20/05/02 13:26:19 INFO tez.TezJobCompiler: Local resource: joda-time-2.9.4.jar
+3900560 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: pig-0.17.0-core-h2.jar
+20/05/02 13:26:19 INFO tez.TezJobCompiler: Local resource: pig-0.17.0-core-h2.jar
+3900560 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: antlr-runtime-3.4.jar
+20/05/02 13:26:19 INFO tez.TezJobCompiler: Local resource: antlr-runtime-3.4.jar
+3900560 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Local resource: automaton-1.11-8.jar
+20/05/02 13:26:19 INFO tez.TezJobCompiler: Local resource: automaton-1.11-8.jar
+3900601 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-872: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:26:19 INFO tez.TezDagBuilder: For vertex - scope-872: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3900601 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors,investors_stock_prices
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Processing aliases: investors,investors_stock_prices
+3900601 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: investors[1,12],investors[-1,-1],investors_stock_prices[3,25]
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Detailed locations: investors[1,12],investors[-1,-1],investors_stock_prices[3,25]
+3900601 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Pig features in the vertex:
+3900618 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-873: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:26:19 INFO tez.TezDagBuilder: For vertex - scope-873: parallelism=1, memory=3072, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx2458m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3900618 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors_stock_prices,stock_prices
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Processing aliases: investors_stock_prices,stock_prices
+3900618 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: stock_prices[2,15],stock_prices[-1,-1],investors_stock_prices[3,25]
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Detailed locations: stock_prices[2,15],stock_prices[-1,-1],investors_stock_prices[3,25]
+3900618 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Pig features in the vertex:
+3900637 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Set auto parallelism for vertex scope-874
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Set auto parallelism for vertex scope-874
+3900638 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-874: parallelism=2, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:26:19 INFO tez.TezDagBuilder: For vertex - scope-874: parallelism=2, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3900638 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: investors_group_by_name,investors_stock_prices,investors_total_stock_price,total_dollar_amount
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Processing aliases: investors_group_by_name,investors_stock_prices,investors_total_stock_price,total_dollar_amount
+3900638 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: investors_stock_prices[3,25],investors_total_stock_price[20,30],total_dollar_amount[25,22],investors_group_by_name[23,26]
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Detailed locations: investors_stock_prices[3,25],investors_total_stock_price[20,30],total_dollar_amount[25,22],investors_group_by_name[23,26]
+3900638 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: HASH_JOIN
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Pig features in the vertex: HASH_JOIN
+3900657 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Set auto parallelism for vertex scope-875
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Set auto parallelism for vertex scope-875
+3900657 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-875: parallelism=14, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:26:19 INFO tez.TezDagBuilder: For vertex - scope-875: parallelism=14, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3900657 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: ordered_list,total_dollar_amount
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Processing aliases: ordered_list,total_dollar_amount
+3900657 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: total_dollar_amount[25,22],ordered_list[28,15]
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Detailed locations: total_dollar_amount[25,22],ordered_list[28,15]
+3900657 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: GROUP_BY,SAMPLER
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Pig features in the vertex: GROUP_BY,SAMPLER
+3900674 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Estimate quantile for sample aggregation vertex scope-884
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Estimate quantile for sample aggregation vertex scope-884
+3900678 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-884: parallelism=1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:26:19 INFO tez.TezDagBuilder: For vertex - scope-884: parallelism=1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3900678 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases:
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Processing aliases:
+3900678 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations:
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Detailed locations:
+3900678 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Pig features in the vertex:
+3900689 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-894: parallelism=-1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:26:19 INFO tez.TezDagBuilder: For vertex - scope-894: parallelism=-1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3900689 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases: ordered_list
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Processing aliases: ordered_list
+3900689 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations: ordered_list[28,15]
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Detailed locations: ordered_list[28,15]
+3900689 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex:
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Pig features in the vertex:
+3900705 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Set VertexManagerPlugin to PartitionerDefinedParallelismVertexManager for vertex scope-896
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Set VertexManagerPlugin to PartitionerDefinedParallelismVertexManager for vertex scope-896
+3900706 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - For vertex - scope-896: parallelism=-1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+20/05/02 13:26:19 INFO tez.TezDagBuilder: For vertex - scope-896: parallelism=-1, memory=6144, java opts=-Djava.net.preferIPv4Stack=true -Dhadoop.metrics.log.level=WARN -Xmx4916m -Dlog4j.configuratorClass=org.apache.tez.common.TezLog4jConfigurator -Dlog4j.configuration=tez-container-log4j.properties -Dyarn.app.container.log.dir=<LOG_DIR> -Dtez.root.logger=INFO,CLA
+3900706 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Processing aliases:
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Processing aliases:
+3900706 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Detailed locations:
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Detailed locations:
+3900706 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezDagBuilder  - Pig features in the vertex: ORDER_BY
+20/05/02 13:26:19 INFO tez.TezDagBuilder: Pig features in the vertex: ORDER_BY
+3900716 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJobCompiler  - Total estimated parallelism is 47
+20/05/02 13:26:19 INFO tez.TezJobCompiler: Total estimated parallelism is 47
+3900743 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - Submitting DAG PigLatin:DefaultJobName-0_scope-36
+20/05/02 13:26:19 INFO tez.TezJob: Submitting DAG PigLatin:DefaultJobName-0_scope-36
+20/05/02 13:26:19 INFO client.TezClient: Submitting dag to TezSession, sessionName=PigLatin:DefaultJobName, applicationId=application_1588421329272_0006, dagName=PigLatin:DefaultJobName-0_scope-36, callerContext={ context=PIG, callerType=PIG_SCRIPT_ID, callerId=PIG-default-c3048a7c-c646-4669-9c8d-af100590b1bf }
+20/05/02 13:26:19 INFO client.TezClient: Submitted dag to TezSession, sessionName=PigLatin:DefaultJobName, applicationId=application_1588421329272_0006, dagId=dag_1588421329272_0006_7, dagName=PigLatin:DefaultJobName-0_scope-36
+3900812 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - Submitted DAG PigLatin:DefaultJobName-0_scope-36. Application id: application_1588421329272_0006
+20/05/02 13:26:19 INFO tez.TezJob: Submitted DAG PigLatin:DefaultJobName-0_scope-36. Application id: application_1588421329272_0006
+3901737 [main] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezLauncher  - HadoopJobId: job_1588421329272_0006
+20/05/02 13:26:20 INFO tez.TezLauncher: HadoopJobId: job_1588421329272_0006
+3901813 [Timer-18] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - DAG Status: status=RUNNING, progress=TotalTasks: 2 Succeeded: 0 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=null
+20/05/02 13:26:20 INFO tez.TezJob: DAG Status: status=RUNNING, progress=TotalTasks: 2 Succeeded: 0 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=null
+3911073 [PigTezLauncher-0] INFO  org.apache.pig.backend.hadoop.executionengine.tez.TezJob  - DAG Status: status=SUCCEEDED, progress=TotalTasks: 7 Succeeded: 7 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=Counters: 61
+        org.apache.tez.common.counters.DAGCounter
+                NUM_SUCCEEDED_TASKS=7
+                TOTAL_LAUNCHED_TASKS=7
+                OTHER_LOCAL_TASKS=1
+                DATA_LOCAL_TASKS=1
+                RACK_LOCAL_TASKS=1
+                AM_CPU_MILLISECONDS=560
+                AM_GC_TIME_MILLIS=0
+        File System Counters
+                FILE_BYTES_READ=8113
+                FILE_BYTES_WRITTEN=2517
+                FILE_READ_OPS=0
+                FILE_LARGE_READ_OPS=0
+                FILE_WRITE_OPS=0
+                HDFS_BYTES_READ=782
+                HDFS_BYTES_WRITTEN=272
+                HDFS_READ_OPS=5
+                HDFS_LARGE_READ_OPS=0
+                HDFS_WRITE_OPS=2
+        org.apache.tez.common.counters.TaskCounter
+                REDUCE_INPUT_GROUPS=40
+                REDUCE_INPUT_RECORDS=62
+                COMBINE_INPUT_RECORDS=0
+                SPILLED_RECORDS=124
+                NUM_SHUFFLED_INPUTS=16
+                NUM_SKIPPED_INPUTS=6
+                NUM_FAILED_SHUFFLE_INPUTS=0
+                MERGED_MAP_OUTPUTS=14
+                GC_TIME_MILLIS=408
+                CPU_MILLISECONDS=8800
+                PHYSICAL_MEMORY_BYTES=3717201920
+                VIRTUAL_MEMORY_BYTES=44831461376
+                COMMITTED_HEAP_BYTES=3717201920
+                INPUT_RECORDS_PROCESSED=43
+                INPUT_SPLIT_LENGTH_BYTES=782
+                OUTPUT_RECORDS=100
+                OUTPUT_LARGE_RECORDS=0
+                OUTPUT_BYTES=2546
+                OUTPUT_BYTES_WITH_OVERHEAD=2170
+                OUTPUT_BYTES_PHYSICAL=1981
+                ADDITIONAL_SPILLS_BYTES_WRITTEN=0
+                ADDITIONAL_SPILLS_BYTES_READ=1546
+                ADDITIONAL_SPILL_COUNT=0
+                SHUFFLE_CHUNK_COUNT=5
+                SHUFFLE_BYTES=1933
+                SHUFFLE_BYTES_DECOMPRESSED=2170
+                SHUFFLE_BYTES_TO_MEM=0
+                SHUFFLE_BYTES_TO_DISK=0
+                SHUFFLE_BYTES_DISK_DIRECT=1933
+                NUM_MEM_TO_DISK_MERGES=0
+                NUM_DISK_TO_DISK_MERGES=0
+                SHUFFLE_PHASE_TIME=355
+                MERGE_PHASE_TIME=426
+                FIRST_EVENT_RECEIVED=190
+                LAST_EVENT_RECEIVED=190
+        MultiStoreCounters
+                Output records in _0_tmp548880753=10
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        org.apache.hadoop.mapreduce.TaskCounter
+                COMBINE_INPUT_RECORDS=27
+                COMBINE_OUTPUT_RECORDS=10
+20/05/02 13:26:29 INFO tez.TezJob: DAG Status: status=SUCCEEDED, progress=TotalTasks: 7 Succeeded: 7 Running: 0 Failed: 0 Killed: 0, diagnostics=, counters=Counters: 61
+        org.apache.tez.common.counters.DAGCounter
+                NUM_SUCCEEDED_TASKS=7
+                TOTAL_LAUNCHED_TASKS=7
+                OTHER_LOCAL_TASKS=1
+                DATA_LOCAL_TASKS=1
+                RACK_LOCAL_TASKS=1
+                AM_CPU_MILLISECONDS=560
+                AM_GC_TIME_MILLIS=0
+        File System Counters
+                FILE_BYTES_READ=8113
+                FILE_BYTES_WRITTEN=2517
+                FILE_READ_OPS=0
+                FILE_LARGE_READ_OPS=0
+                FILE_WRITE_OPS=0
+                HDFS_BYTES_READ=782
+                HDFS_BYTES_WRITTEN=272
+                HDFS_READ_OPS=5
+                HDFS_LARGE_READ_OPS=0
+                HDFS_WRITE_OPS=2
+        org.apache.tez.common.counters.TaskCounter
+                REDUCE_INPUT_GROUPS=40
+                REDUCE_INPUT_RECORDS=62
+                COMBINE_INPUT_RECORDS=0
+                SPILLED_RECORDS=124
+                NUM_SHUFFLED_INPUTS=16
+                NUM_SKIPPED_INPUTS=6
+                NUM_FAILED_SHUFFLE_INPUTS=0
+                MERGED_MAP_OUTPUTS=14
+                GC_TIME_MILLIS=408
+                CPU_MILLISECONDS=8800
+                PHYSICAL_MEMORY_BYTES=3717201920
+                VIRTUAL_MEMORY_BYTES=44831461376
+                COMMITTED_HEAP_BYTES=3717201920
+                INPUT_RECORDS_PROCESSED=43
+                INPUT_SPLIT_LENGTH_BYTES=782
+                OUTPUT_RECORDS=100
+                OUTPUT_LARGE_RECORDS=0
+                OUTPUT_BYTES=2546
+                OUTPUT_BYTES_WITH_OVERHEAD=2170
+                OUTPUT_BYTES_PHYSICAL=1981
+                ADDITIONAL_SPILLS_BYTES_WRITTEN=0
+                ADDITIONAL_SPILLS_BYTES_READ=1546
+                ADDITIONAL_SPILL_COUNT=0
+                SHUFFLE_CHUNK_COUNT=5
+                SHUFFLE_BYTES=1933
+                SHUFFLE_BYTES_DECOMPRESSED=2170
+                SHUFFLE_BYTES_TO_MEM=0
+                SHUFFLE_BYTES_TO_DISK=0
+                SHUFFLE_BYTES_DISK_DIRECT=1933
+                NUM_MEM_TO_DISK_MERGES=0
+                NUM_DISK_TO_DISK_MERGES=0
+                SHUFFLE_PHASE_TIME=355
+                MERGE_PHASE_TIME=426
+                FIRST_EVENT_RECEIVED=190
+                LAST_EVENT_RECEIVED=190
+        MultiStoreCounters
+                Output records in _0_tmp548880753=10
+        Shuffle Errors
+                BAD_ID=0
+                CONNECTION=0
+                IO_ERROR=0
+                WRONG_LENGTH=0
+                WRONG_MAP=0
+                WRONG_REDUCE=0
+        org.apache.hadoop.mapreduce.TaskCounter
+                COMBINE_INPUT_RECORDS=27
+                COMBINE_OUTPUT_RECORDS=10
+3911739 [main] INFO  org.apache.pig.tools.pigstats.tez.TezPigScriptStats  - Script Statistics:
+
+       HadoopVersion: 2.8.5-amzn-5
+          PigVersion: 0.17.0
+          TezVersion: 0.9.2
+              UserId: hadoop
+            FileName:
+           StartedAt: 2020-05-02 13:26:19
+          FinishedAt: 2020-05-02 13:26:30
+            Features: HASH_JOIN,GROUP_BY,ORDER_BY
+
+Success!
+
+
+DAG 0:
+                                    Name: PigLatin:DefaultJobName-0_scope-36
+                           ApplicationId: job_1588421329272_0006
+                      TotalLaunchedTasks: 7
+                           FileBytesRead: 8113
+                        FileBytesWritten: 2517
+                           HdfsBytesRead: 782
+                        HdfsBytesWritten: 272
+      SpillableMemoryManager spill count: 0
+                Bags proactively spilled: 0
+             Records proactively spilled: 0
+
+DAG Plan:
+Tez vertex scope-872    ->      Tez vertex scope-874,
+Tez vertex scope-873    ->      Tez vertex scope-874,
+Tez vertex scope-874    ->      Tez vertex scope-875,
+Tez vertex scope-875    ->      Tez vertex scope-884,Tez vertex scope-894,
+Tez vertex scope-884    ->      Tez vertex scope-894,
+Tez vertex scope-894    ->      Tez vertex scope-896,
+Tez vertex scope-896
+
+Vertex Stats:
+VertexId Parallelism TotalTasks   InputRecords   ReduceInputRecords  OutputRecords  FileBytesRead FileBytesWritten  HdfsBytesRead HdfsBytesWritten Alias Feature Outputs
+scope-872          1          1             27                    0             27            112              583            748                0 investors,investors_stock_prices
+scope-873          1          1              5                    0              5            112              158             34                0 investors_stock_prices,stock_prices
+scope-874          2          1              0                   32             27           1988              811              0                0 investors_group_by_name,investors_stock_prices,investors_total_stock_price,total_dollar_amount        HASH_JOIN
+scope-875         -1          1              0                   10             20           4872              507              0                0 ordered_list,total_dollar_amount      GROUP_BY,SAMPLER
+scope-884          1          1              0                   10              1            197              141              0                0
+scope-894         -1          1             11                    0             10            515              317              0                0 ordered_list
+scope-896         -1          1              0                   10             10            317                0              0              272       ORDER_BY        hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp548880753,
+
+Input(s):
+Successfully read 5 records (34 bytes) from: "/PIG/input/stockprices.txt"
+Successfully read 27 records (748 bytes) from: "/PIG/input/investor.txt"
+
+Output(s):
+Successfully stored 10 records (272 bytes) in: "hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp548880753"
+
+20/05/02 13:26:30 INFO tez.TezPigScriptStats: Script Statistics:
+
+       HadoopVersion: 2.8.5-amzn-5
+          PigVersion: 0.17.0
+          TezVersion: 0.9.2
+              UserId: hadoop
+            FileName:
+           StartedAt: 2020-05-02 13:26:19
+          FinishedAt: 2020-05-02 13:26:30
+            Features: HASH_JOIN,GROUP_BY,ORDER_BY
+
+Success!
+
+
+DAG 0:
+                                    Name: PigLatin:DefaultJobName-0_scope-36
+                           ApplicationId: job_1588421329272_0006
+                      TotalLaunchedTasks: 7
+                           FileBytesRead: 8113
+                        FileBytesWritten: 2517
+                           HdfsBytesRead: 782
+                        HdfsBytesWritten: 272
+      SpillableMemoryManager spill count: 0
+                Bags proactively spilled: 0
+             Records proactively spilled: 0
+
+DAG Plan:
+Tez vertex scope-872    ->      Tez vertex scope-874,
+Tez vertex scope-873    ->      Tez vertex scope-874,
+Tez vertex scope-874    ->      Tez vertex scope-875,
+Tez vertex scope-875    ->      Tez vertex scope-884,Tez vertex scope-894,
+Tez vertex scope-884    ->      Tez vertex scope-894,
+Tez vertex scope-894    ->      Tez vertex scope-896,
+Tez vertex scope-896
+
+Vertex Stats:
+VertexId Parallelism TotalTasks   InputRecords   ReduceInputRecords  OutputRecords  FileBytesRead FileBytesWritten  HdfsBytesRead HdfsBytesWritten Alias Feature Outputs
+scope-872          1          1             27                    0             27            112              583            748                0 investors,investors_stock_prices
+scope-873          1          1              5                    0              5            112              158             34                0 investors_stock_prices,stock_prices
+scope-874          2          1              0                   32             27           1988              811              0                0 investors_group_by_name,investors_stock_prices,investors_total_stock_price,total_dollar_amount        HASH_JOIN
+scope-875         -1          1              0                   10             20           4872              507              0                0 ordered_list,total_dollar_amount      GROUP_BY,SAMPLER
+scope-884          1          1              0                   10              1            197              141              0                0
+scope-894         -1          1             11                    0             10            515              317              0                0 ordered_list
+scope-896         -1          1              0                   10             10            317                0              0              272       ORDER_BY        hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp548880753,
+
+Input(s):
+Successfully read 5 records (34 bytes) from: "/PIG/input/stockprices.txt"
+Successfully read 27 records (748 bytes) from: "/PIG/input/investor.txt"
+
+Output(s):
+Successfully stored 10 records (272 bytes) in: "hdfs://ip-172-31-0-84.ec2.internal:8020/tmp/temp-287442847/tmp548880753"
+
+20/05/02 13:26:30 INFO input.FileInputFormat: Total input files to process : 1
+3911744 [main] INFO  org.apache.pig.backend.hadoop.executionengine.util.MapRedUtil  - Total input paths to process : 1
+20/05/02 13:26:30 INFO util.MapRedUtil: Total input paths to process : 1
+((Vanessa,Robertson),167625)
+((Brian,Johnston),147900)
+((Lisa,Butler),131725)
+((Jessica,Henderson),51680)
+((Amanda,Piper),46380)
+((Pippa,Dickens),19440)
+((Joe,Chapman),17595)
+((Megan,Clark),12820)
+((Andrea,Arnold),8605)
+((Gavin,Thomson),3300)
+grunt>
+Broadcast message from root@ip-172-31-0-84
+        (unknown) at 13:29 ...
+
+The system is going down for halt NOW!
+
+Broadcast message from root@ip-172-31-0-84
+        (unknown) at 13:29 ...
+
+The system is going down for halt NOW!
