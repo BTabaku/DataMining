@@ -1,0 +1,89 @@
+//Uploading the files in the HDFS, using filezilla the 'investitor' and 'stockprice'
+//we create a folder and its sub folder
+-hadoop fs -ls
+-hadoop fs -mkdir /PIG
+//a sub directory
+-hadoop fs -mkdir /PIG/input
+// we copy everything to the input
+-hadoop fs -copyFromLocal * PIG/input/
+
+//task 2 
+Load files into as 'investors' and 'stock_prices'; 
+Display both files to make sure they are loaded correctly
+//loading into investors
+
+investors = LOAD '/PIG/input/investor.txt' AS(id:chararray, name:chararray,lastname:chararray, sharename:chararray,quantity:int);
+
+stock_prices = LOAD '/PIG/input/stockprices.txt' AS(sharename:chararray, price:int);
+
+//Task 3 Display the structure of relation ‘investors’ and ‘stock_prices’
+//displaying file from structure and data
+
+describe investors;
+dump investors;
+
+describe stock_prices;
+dump stock_prices;
+
+
+//TASK 4 Join the two files ('investors' and 'stock_prices') by stock symbol; Display the joined file
+-we join two tables to show their relation
+investors_stock_prices = JOIN investors BY sharename, stock_prices BY sharename;
+dump investors_stock_prices;
+
+//TASK 5
+//Group the above file (joined file) by the 'lastname' of the investors; Display the results
+
+group_by_investor_lastname = GROUP investors_stock_prices by lastname;
+dump group_by_investor_lastname;
+
+//TASK 6 Calculate the total shares (simply the sum of shares among all stocks); Display results
+
+total_shares = FOREACH group_by_investor_lastname GENERATE investors_stock_prices, SUM(investors_stock_prices.quantity); // Total Stock for each investor
+
+//Another version that shows the total amount
+
+//we group investors
+
+goup_of_investors = GROUP investors ALL;
+dump goup_of_investors;
+
+total_shares = FOREACH goup_of_investors GENERATE group, SUM(investors.quantity); // Total Stock
+
+//displaying the result total amount
+dump total_shares;
+
+//TASK 7 Calculate the total dollar amount that each investor 
+has invested (shares per each stock multiplied by the stock price); 
+Display the results.
+
+//we generate a new table from 'investors_stock_prices' from exercise 4 and we get a new table  and we include the quantity of shares * the quantity
+//according to each share.
+
+investors_total_stock_price = FOREACH investors_stock_prices  GENERATE name, lastname, quantity * price as total_amount_price;
+describe investors_total_stock_price;
+dump investors_total_stock_price;
+
+//we group the the investors 
+investors_group_by_name = GROUP investors_total_stock_price by (name,lastname);
+
+describe investors_group_by_name;
+dump investors_group_by_name;
+
+//and we get the total amount of dollars according to the two previous created tables.
+
+total_dollar_amount = FOREACH investors_group_by_name GENERATE group, SUM(investors_total_stock_price.total_amount_price) as total_amount_of_dollars_spent;
+dump total_dollar_amount;
+
+//TASK 8 Filter the top two investors that have invested the most;
+ Display the results
+ 
+ordered_list = ORDER total_dollar_amount BY total_amount_of_dollars_spent DESC;
+top_investors = LIMIT ordered_list 2; //listing just two of them
+
+
+
+
+
+
+
