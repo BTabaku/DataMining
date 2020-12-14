@@ -1,0 +1,395 @@
+1
+
+Using username "hadoop".
+Authenticating with public key "mainKey"
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2018.03-release-notes/
+33 package(s) needed for security, out of 57 available
+Run "sudo yum update" to apply all updates.
+
+EEEEEEEEEEEEEEEEEEEE MMMMMMMM           MMMMMMMM RRRRRRRRRRRRRRR
+E::::::::::::::::::E M:::::::M         M:::::::M R::::::::::::::R
+EE:::::EEEEEEEEE:::E M::::::::M       M::::::::M R:::::RRRRRR:::::R
+  E::::E       EEEEE M:::::::::M     M:::::::::M RR::::R      R::::R
+  E::::E             M::::::M:::M   M:::M::::::M   R:::R      R::::R
+  E:::::EEEEEEEEEE   M:::::M M:::M M:::M M:::::M   R:::RRRRRR:::::R
+  E::::::::::::::E   M:::::M  M:::M:::M  M:::::M   R:::::::::::RR
+  E:::::EEEEEEEEEE   M:::::M   M:::::M   M:::::M   R:::RRRRRR::::R
+  E::::E             M:::::M    M:::M    M:::::M   R:::R      R::::R
+  E::::E       EEEEE M:::::M     MMM     M:::::M   R:::R      R::::R
+EE:::::EEEEEEEE::::E M:::::M             M:::::M   R:::R      R::::R
+E::::::::::::::::::E M:::::M             M:::::M RR::::R      R::::R
+EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
+
+[hadoop@ip-172-31-2-108 ~]$ ls -a
+.   .aws           .bashrc                 ClientBooking.txt  Employee.txt  Manager.txt  .ssh
+..  .bash_profile  CleaningAssignment.txt  Client.txt         Hotel.txt     Repair.txt   Technician.txt
+[hadoop@ip-172-31-2-108 ~]$
+[hadoop@ip-172-31-2-108 ~]$ ls -a
+.   .aws           .bashrc                 ClientBooking.txt  Employee.txt  Manager.txt  .ssh
+..  .bash_profile  CleaningAssignment.txt  Client.txt         Hotel.txt     Repair.txt   Technician.txt
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -ls
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -mkdir /HV
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -mkdir /HV/Question2
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -mkdir /HV/Question2/input
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -copyFromLocal CleaningAssignment.txt /HV/Question2/input
+hadoop fs -copyFromLocal Client.txt /HV/Question2/input
+hadoop fs -copyFromLocal ClientBooking.txt /HV/Question2/input
+hadoop fs -copyFromLocal Employee.txt /HV/Question2/input
+hadoop fs -copyFromLocal Hotel.txt /HV/Question2/input
+hadoop fs -copyFromLocal Manager.txt /HV/Question2/input
+hadoop fs -copyFromLocal Repair.txt /HV/Question2/input
+hadoop fs -copyFromLocal Technician.txt /HV/Question2/input
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -copyFromLocal Client.txt /HV/Question2/input
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -copyFromLocal ClientBooking.txt /HV/Question2/input
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -copyFromLocal Employee.txt /HV/Question2/input
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -copyFromLocal Hotel.txt /HV/Question2/input
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -copyFromLocal Manager.txt /HV/Question2/input
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -copyFromLocal Repair.txt /HV/Question2/input
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -copyFromLocal Technician.txt /HV/Question2/input
+[hadoop@ip-172-31-2-108 ~]$ hadoop fs -ls /HV/Question2/input
+Found 8 items
+-rw-r--r--   1 hadoop hadoop         96 2020-07-01 19:29 /HV/Question2/input/CleaningAssignment.txt
+-rw-r--r--   1 hadoop hadoop        203 2020-07-01 19:29 /HV/Question2/input/Client.txt
+-rw-r--r--   1 hadoop hadoop        119 2020-07-01 19:29 /HV/Question2/input/ClientBooking.txt
+-rw-r--r--   1 hadoop hadoop         61 2020-07-01 19:29 /HV/Question2/input/Employee.txt
+-rw-r--r--   1 hadoop hadoop         79 2020-07-01 19:29 /HV/Question2/input/Hotel.txt
+-rw-r--r--   1 hadoop hadoop        234 2020-07-01 19:29 /HV/Question2/input/Manager.txt
+-rw-r--r--   1 hadoop hadoop        153 2020-07-01 19:29 /HV/Question2/input/Repair.txt
+-rw-r--r--   1 hadoop hadoop         56 2020-07-01 19:29 /HV/Question2/input/Technician.txt
+[hadoop@ip-172-31-2-108 ~]$
+
+
+2
+
+[hadoop@ip-172-31-2-108 ~]$
+[hadoop@ip-172-31-2-108 ~]$
+[hadoop@ip-172-31-2-108 ~]$ hive
+
+
+hive> CREATE DATABASE Hotel_db;
+OK
+Time taken: 0.286 seconds
+hive>
+    >
+    > CREATE TABLE IF NOT EXISTS Hotel_db.CleaningAssignment(building_id String, apt_no int, employee_id int) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+OK
+Time taken: 0.413 seconds
+hive>
+    >
+    > CREATE TABLE IF NOT EXISTS Hotel_db.Client(client_id String, client_name String, client_industry String , client_location String, referred_by_client String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+OK
+Time taken: 0.051 seconds
+hive>
+    > CREATE TABLE IF NOT EXISTS Hotel_db.ClientBooking(building_id String ,apt_no int, apt_no_of_bedrooms String, client_id String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+OK
+Time taken: 0.047 seconds
+hive>
+    >
+    > CREATE TABLE IF NOT EXISTS Hotel_db.Employee(employee_id String, employee_name String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+OK
+Time taken: 0.038 seconds
+hive>
+    >
+    >
+    > CREATE TABLE IF NOT EXISTS Hotel_db.Hotel(building_id String, no_of_floors int, manager_id String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+OK
+Time taken: 0.042 seconds
+hive>
+    >
+    > CREATE TABLE IF NOT EXISTS Hotel_db.Manager(manager_id String, manager_firstname String, manager_lastname String, manager_yob int, manager_salary float, manager_bonus float, manager_resbuilding_id String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+OK
+Time taken: 0.055 seconds
+hive>
+    > CREATE TABLE IF NOT EXISTS Hotel_db.Repair(technician_id String, building_id String, year_last int, year_next int) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+OK
+Time taken: 0.052 seconds
+hive>
+    > CREATE TABLE IF NOT EXISTS Hotel_db.Technician(technician_id String,technician_name String) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE tblproperties ("skip.header.line.count"="1");
+OK
+Time taken: 0.044 seconds
+hive>
+    > USE Hotel_db;
+OK
+Time taken: 0.009 seconds
+hive> SHOW TABLES;
+OK
+cleaningassignment
+client
+clientbooking
+employee
+hotel
+manager
+repair
+technician
+Time taken: 0.09 seconds, Fetched: 8 row(s)
+hive>
+
+
+**********************3*******************
+
+hive> LOAD DATA  LOCAL INPATH './CleaningAssignment.txt' OVERWRITE INTO TABLE cleaningassignment;
+Loading data to table hotel_db.cleaningassignment
+OK
+Time taken: 0.931 seconds
+hive> LOAD DATA  LOCAL INPATH './Client.txt' OVERWRITE INTO TABLE client;
+Loading data to table hotel_db.client
+OK
+Time taken: 0.734 seconds
+hive> LOAD DATA  LOCAL INPATH './ClientBooking.txt' OVERWRITE INTO TABLE clientbooking;
+Loading data to table hotel_db.clientbooking
+OK
+Time taken: 0.714 seconds
+hive> LOAD DATA  LOCAL INPATH './Employee.txt' OVERWRITE INTO TABLE employee;
+Loading data to table hotel_db.employee
+OK
+Time taken: 0.718 seconds
+hive> LOAD DATA  LOCAL INPATH './Hotel.txt' OVERWRITE INTO TABLE hotel;
+Loading data to table hotel_db.hotel
+OK
+Time taken: 0.71 seconds
+hive> LOAD DATA  LOCAL INPATH './Manager.txt' OVERWRITE INTO TABLE manager;
+Loading data to table hotel_db.manager
+OK
+Time taken: 0.722 seconds
+hive> LOAD DATA  LOCAL INPATH './Repair.txt' OVERWRITE INTO TABLE repair;
+Loading data to table hotel_db.repair
+OK
+Time taken: 0.743 seconds
+hive> LOAD DATA  LOCAL INPATH './Technician.txt' OVERWRITE INTO TABLE technician;
+Loading data to table hotel_db.technician
+OK
+Time taken: 0.705 seconds
+hive>
+    >
+
+******************************4*********************
+hive> SELECT manager_id, manager_firstname, manager_lastname FROM manager;
+OK
+M23     Austin  Lee
+M12     Boris   Grant
+M34     George  Sherman
+Time taken: 1.151 seconds, Fetched: 3 row(s)
+hive>
+
+*********************4********************************
+hive> SELECT client_id, client_name, client_industry FROM client;
+OK
+C222    SkyJet  Airline
+C888    SouthAlps       Sports
+C777    John    Music
+C111    BlingNotes      Music
+Time taken: 0.086 seconds, Fetched: 4 row(s)
+hive>
+
+
+***********************5*************************
+
+hive> SELECT hotel.building_id, hotel.no_of_floors FROM hotel JOIN manager ON hotel.manager_id = manager.manager_id;
+Query ID = hadoop_20200701193621_93a28a87-f7b5-480d-a866-fe70986443e6
+Total jobs = 1
+Launching Job 1 out of 1
+Tez session was closed. Reopening...
+Session re-established.
+Status: Running (Executing on YARN cluster with App id application_1593631719260_0002)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 1 .......... container     SUCCEEDED      1          1        0        0       0       0
+Map 2 .......... container     SUCCEEDED      1          1        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 6.46 s
+----------------------------------------------------------------------------------------------
+OK
+B2      6
+B3      4
+B4      4
+B1      5
+Time taken: 13.027 seconds, Fetched: 4 row(s)
+hive>
+
+
+*************************6**************************
+hive> SELECT building_id, no_of_floors , manager_firstname, manager_lastname FROM hotel JOIN manager ON hotel.manager_id = manager.manager_id;
+Query ID = hadoop_20200701194948_a4fcd811-7641-4e18-b718-0e24dfdb2369
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (Executing on YARN cluster with App id application_1593631719260_0002)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 1 .......... container     SUCCEEDED      1          1        0        0       0       0
+Map 2 .......... container     SUCCEEDED      1          1        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 5.55 s
+----------------------------------------------------------------------------------------------
+OK
+B2      6       Austin  Lee
+B3      4       Austin  Lee
+B4      4       George  Sherman
+B1      5       Boris   Grant
+Time taken: 5.974 seconds, Fetched: 4 row(s)
+hive>
+
+
+
+
+*************************7**************************
+
+hive>
+    > SELECT manager_firstname , manager_lastname, manager_salary , manager_yob , COUNT(building_id) as total_hotels FROM manager JOIN hotel ON hotel.manager_id = manager.manager_id WHERE manager_salary>40000 GROUP BY manager_firstname , manager_lastname, manager_salary , manager_yob;
+Query ID = hadoop_20200701194601_c370ca7b-03a9-4962-94ee-66637a507fc3
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (Executing on YARN cluster with App id application_1593631719260_0002)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 1 .......... container     SUCCEEDED      1          1        0        0       0       0
+Map 3 .......... container     SUCCEEDED      1          1        0        0       0       0
+Reducer 2 ...... container     SUCCEEDED      1          1        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 6.13 s
+----------------------------------------------------------------------------------------------
+OK
+Austin  Lee     50000.0 1975    2
+Boris   Grant   60000.0 1980    1
+George  Sherman 52000.0 1976    1
+Time taken: 6.686 seconds, Fetched: 3 row(s)
+hive>
+
+
+******************** 8 *************************
+
+hive>  SELECT building_id , apt_no FROM clientbooking JOIN client ON clientbooking.client_id = client.client_id WHERE  client_name = 'John' GROUP BY building_id , apt_no;
+Query ID = hadoop_20200701203036_2c983865-b307-4ab0-a306-cc37cf093a81
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (Executing on YARN cluster with App id application_1593631719260_0005)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 1 .......... container     SUCCEEDED      1          1        0        0       0       0
+Map 2 .......... container     SUCCEEDED      1          1        0        0       0       0
+Reducer 3 ...... container     SUCCEEDED      1          1        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 03/03  [==========================>>] 100%  ELAPSED TIME: 6.49 s
+----------------------------------------------------------------------------------------------
+OK
+B3      11
+B4      11
+Time taken: 7.053 seconds, Fetched: 2 row(s)
+hive>
+
+
+********************9***********************
+
+hive> SELECT technician_name, building_id FROM technician JOIN repair ON technician.technician_id = repair.technician_id WHERE year_last=2018 or year_next=2018;
+Query ID = hadoop_20200701203904_86a92769-f6ff-41bf-acfc-6a91627c245f
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (Executing on YARN cluster with App id application_1593631719260_0006)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 1 .......... container     SUCCEEDED      1          1        0        0       0       0
+Map 2 .......... container     SUCCEEDED      1          1        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 5.37 s
+----------------------------------------------------------------------------------------------
+OK
+Time taken: 6.039 seconds
+hive>
+
+******************10**************************************
+
+hive>
+    >
+    >
+    >
+    >
+    > SELECT employee.employee_id, employee_name, COUNT(employee.employee_id) as total_hotels FROM employee , cleaningassignment, clientbooking WHERE employee.employee_id = cleaningassignment.employee_id AND cleaningassignment.building_id=clientbooking.building_id AND clientbooking.apt_no_of_bedrooms>=2 GROUP BY employee.employee_id, employee_name ORDER BY total_hotels DESC;
+No Stats for hotel_db@employee, Columns: employee_id, employee_name
+No Stats for hotel_db@cleaningassignment, Columns: building_id, employee_id
+No Stats for hotel_db@clientbooking, Columns: building_id, apt_no_of_bedrooms
+Query ID = hadoop_20200701205228_1df0dc0d-64bd-41d7-ba70-5273623b4557
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (Executing on YARN cluster with App id application_1593631719260_0006)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 1 .......... container     SUCCEEDED      1          1        0        0       0       0
+Map 2 .......... container     SUCCEEDED      1          1        0        0       0       0
+Map 5 .......... container     SUCCEEDED      1          1        0        0       0       0
+Reducer 3 ...... container     SUCCEEDED      1          1        0        0       0       0
+Reducer 4 ...... container     SUCCEEDED      1          1        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 05/05  [==========================>>] 100%  ELAPSED TIME: 6.82 s
+----------------------------------------------------------------------------------------------
+OK
+5432    Brian   3
+9876    Boris   2
+7652    Caroline        1
+Time taken: 7.388 seconds, Fetched: 3 row(s)
+hive>
+
+
+*****************************11********************************
+hive>
+    > select client1.client_name,client2.client_name from client client1, client client2 where client1.referred_by_client = client2.client_id;
+Query ID = hadoop_20200701215720_4a981ee9-2210-4165-b98b-699735c5bc67
+Total jobs = 1
+Launching Job 1 out of 1
+Status: Running (Executing on YARN cluster with App id application_1593640449935_0002)
+
+----------------------------------------------------------------------------------------------
+        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED
+----------------------------------------------------------------------------------------------
+Map 1 .......... container     SUCCEEDED      1          1        0        0       0       0
+Map 2 .......... container     SUCCEEDED      1          1        0        0       0       0
+----------------------------------------------------------------------------------------------
+VERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 6.27 s
+----------------------------------------------------------------------------------------------
+OK
+SkyJet  BlingNotes
+John    SkyJet
+SouthAlps       John
+Time taken: 6.759 seconds, Fetched: 3 row(s)
+hive>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

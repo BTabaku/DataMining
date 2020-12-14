@@ -1,0 +1,18 @@
+//Loading data into hadoop
+ls -a
+hadoop fs -ls
+hadoop fs -mkdir /PIG_LATIN
+hadoop fs -mkdir /PIG_LATIN/input_files
+hadoop fs -copyFromLocal stock_prices.txt /PIG_LATIN/input_files
+hadoop fs -copyFromLocal investor.txt /PIG_LATIN/input_files
+hadoop fs -ls /PIG_LATIN/input_files
+
+hadoop fs -cat /PIG_LATIN/input_files/investor.txt
+hadoop fs -cat /PIG_LATIN/input_files/stock_prices.txt
+
+
+//to initialise the pig terminal part
+ 
+//or to run it like script -grunt> 
+pig 
+exec tabakuQ1.pig

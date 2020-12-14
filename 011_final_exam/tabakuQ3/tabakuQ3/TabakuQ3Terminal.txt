@@ -1,0 +1,235 @@
+20/07/12 13:39:22 WARN StreamingContext: Dynamic Allocation is enabled for this application. Enabling Dynamic allocation for Spark Streaming applications can cause data loss if Write Ahead Log is not enabled for non-replayable sources like Flume. See the programming guide for details on how to enable the Write Ahead Log.
+
+20/07/12 13:39:22 INFO RecurringTimer: Started timer for JobGenerator at time 1594561170000
+20/07/12 13:39:22 INFO JobGenerator: Started JobGenerator at 1594561170000 ms
+20/07/12 13:39:22 INFO JobScheduler: Started JobScheduler
+20/07/12 13:39:22 INFO StreamingContext: StreamingContext started
+20/07/12 13:39:30 INFO FileInputDStream: Finding new files took 13 ms
+20/07/12 13:39:30 INFO FileInputDStream: New files at time 1594561170000 ms:
+
+20/07/12 13:39:30 INFO JobScheduler: Added jobs for time 1594561170000 ms
+20/07/12 13:39:30 INFO JobScheduler: Starting job streaming job 1594561170000 ms.0 from job set of time 1594561170000 ms
+-------------------------------------------
+Time: 2020-07-12 13:39:30
+-------------------------------------------
+(u'SafeT_Helmet', 1.6989041354095649)
+(u'Treado_Tire', 2.0335906227887937)
+(u'Bucky_Knife', 2.0335906227887937)
+
+20/07/12 13:39:34 INFO JobScheduler: Finished job streaming job 1594561170000 ms.0 from job set of time 1594561170000 ms
+20/07/12 13:39:34 INFO JobScheduler: Total delay: 4.606 s for time 1594561170000 ms (execution: 3.840 s)
+20/07/12 13:39:34 INFO FileInputDStream: Cleared 0 old files that were older than 1594561110000 ms:
+
+
+
+20/07/12 13:39:34 INFO FileInputDStream: Cleared 0 old files that were older than 1594561110000 ms:
+20/07/12 13:39:34 INFO ReceivedBlockTracker: Deleting batches:
+20/07/12 13:39:34 INFO InputInfoTracker: remove old batch metadata:
+20/07/12 13:40:00 INFO FileInputDStream: Finding new files took 4 ms
+20/07/12 13:40:00 INFO FileInputDStream: New files at time 1594561200000 ms:
+
+20/07/12 13:40:00 INFO JobScheduler: Added jobs for time 1594561200000 ms
+20/07/12 13:40:00 INFO JobScheduler: Starting job streaming job 1594561200000 ms.0 from job set of time 1594561200000 ms
+-------------------------------------------
+Time: 2020-07-12 13:40:00
+-------------------------------------------
+(u'Electra_Compass', 0.2902645250458846)
+(u'Sleepy_Pad', 0.39672484628900195)
+(u'Cosy_Sock', 0.5273676842268088)
+(u'Zzz_Bag', 0.46079441229980467)
+(u'Comfy_Harness', 0.33003417657855216)
+(u'Reflecto_Jacket', 0.4894386468009043)
+(u'Easy_Boot', 0.42360982724365226)
+(u'Dura_Boot', 0.6437878288085936)
+(u'Sunny_Charger', 0.7312809701171874)
+(u'Trusty_Rope', 0.44396198144330445)
+
+
+20/07/12 13:40:02 INFO JobScheduler: Finished job streaming job 1594561200000 ms.0 from job set of time 1594561200000 ms
+20/07/12 13:40:02 INFO JobScheduler: Total delay: 2.629 s for time 1594561200000 ms (execution: 1.938 s)
+
+
+
+20/07/12 13:40:02 INFO FileInputDStream: Cleared 0 old files that were older than 1594561140000 ms:
+20/07/12 13:40:02 INFO ReceivedBlockTracker: Deleting batches:
+20/07/12 13:40:02 INFO InputInfoTracker: remove old batch metadata:
+20/07/12 13:40:30 INFO FileInputDStream: Finding new files took 8 ms
+20/07/12 13:40:30 INFO FileInputDStream: New files at time 1594561230000 ms:
+hdfs://ip-172-31-4-215.ec2.internal:8020/user/hadoop/finalproj/product1.csv
+20/07/12 13:40:30 INFO JobScheduler: Added jobs for time 1594561230000 ms
+20/07/12 13:40:30 INFO JobScheduler: Starting job streaming job 1594561230000 ms.0 from job set of time 1594561230000 ms
+-------------------------------------------
+Time: 2020-07-12 13:40:30
+-------------------------------------------
+(u'Strongster_Carribeaner', 0.2190321255287784)
+(u'Mmm_Stove', 0.2522351871072434)
+(u'Biggy_Tent', 0.26557902457338367)
+(u'Electra_Compass', 0.31706486418791446)
+(u'HiTec_GPS', 0.20568828806263814)
+(u'Tiny_Tent', 0.24309379808921056)
+(u'Action_Sandal', 0.20568828806263814)
+(u'Mega_Camera', 0.31212592361798897)
+(u'Treado_Tire', 0.32483890340785226)
+(u'Bucky_Knife', 0.19654689904460526)
+
+
+20/07/12 13:40:33 INFO JobScheduler: Finished job streaming job 1594561230000 ms.0 from job set of time 1594561230000 ms
+20/07/12 13:40:33 INFO JobScheduler: Total delay: 3.502 s for time 1594561230000 ms (execution: 2.827 s)
+
+
+20/07/12 13:40:33 INFO FileInputDStream: Cleared 0 old files that were older than 1594561170000 ms:
+20/07/12 13:40:33 INFO FileInputDStream: Cleared 0 old files that were older than 1594561170000 ms:
+20/07/12 13:40:33 INFO ReceivedBlockTracker: Deleting batches:
+20/07/12 13:40:33 INFO InputInfoTracker: remove old batch metadata:
+20/07/12 13:41:00 INFO FileInputDStream: Finding new files took 6 ms
+20/07/12 13:41:00 INFO FileInputDStream: New files at time 1594561260000 ms:
+
+20/07/12 13:41:00 INFO JobScheduler: Added jobs for time 1594561260000 ms
+20/07/12 13:41:00 INFO JobScheduler: Starting job streaming job 1594561260000 ms.0 from job set of time 1594561260000 ms
+-------------------------------------------
+Time: 2020-07-12 13:41:00
+-------------------------------------------
+(u'Electra_Compass', 1.4251408878933596)
+(u'Sleepy_Pad', 0.6942938960152755)
+(u'Cosy_Sock', 0.6884722743397572)
+(u'Strongster_Carribeaner', 0.8136999891749672)
+(u'Mmm_Stove', 0.7994172104197226)
+(u'Reflecto_Jacket', 0.8416449907987221)
+(u'Biggy_Tent', 0.5827650271791041)
+(u'HiTec_GPS', 1.3719452769877563)
+(u'Trusty_Rope', 0.5184321729647088)
+(u'Bucky_Knife', 0.6334967933408908)
+
+
+20/07/12 13:41:02 INFO JobScheduler: Finished job streaming job 1594561260000 ms.0 from job set of time 1594561260000 ms
+20/07/12 13:41:02 INFO JobScheduler: Total delay: 2.281 s for time 1594561260000 ms (execution: 1.682 s)
+
+
+20/07/12 13:41:02 INFO FileInputDStream: Cleared 0 old files that were older than 1594561200000 ms:
+20/07/12 13:41:02 INFO FileInputDStream: Cleared 0 old files that were older than 1594561200000 ms:
+20/07/12 13:41:02 INFO ReceivedBlockTracker: Deleting batches:
+20/07/12 13:41:02 INFO InputInfoTracker: remove old batch metadata: 1594561170000 ms
+20/07/12 13:41:30 INFO FileInputDStream: Finding new files took 5 ms
+20/07/12 13:41:30 INFO FileInputDStream: New files at time 1594561290000 ms:
+hdfs://ip-172-31-4-215.ec2.internal:8020/user/hadoop/finalproj/product2.csv
+20/07/12 13:41:30 INFO JobScheduler: Added jobs for time 1594561290000 ms
+20/07/12 13:41:30 INFO JobScheduler: Starting job streaming job 1594561290000 ms.0 from job set of time 1594561290000 ms
+-------------------------------------------
+Time: 2020-07-12 13:41:30
+-------------------------------------------
+
+20/07/12 13:41:32 INFO JobScheduler: Finished job streaming job 1594561290000 ms.0 from job set of time 1594561290000 ms
+20/07/12 13:41:32 INFO JobScheduler: Total delay: 2.542 s for time 1594561290000 ms (execution: 1.920 s)
+
+(u'Electra_Compass', 1.0262486530735428)
+(u'Sleepy_Pad', 1.2327025553919897)
+(u'Cosy_Sock', 0.9371106349962931)
+(u'Biggy_Tent', 1.1358533518345149)
+(u'Zzz_Bag', 0.4256561446577224)
+(u'Strongster_Carribeaner', 1.5078730044784008)
+(u'Mmm_Stove', 1.1856302998922739)
+(u'Reflecto_Jacket', 0.7980879753298583)
+(u'Comfy_Harness', 0.325966516517298)
+(u'Dura_Boot', 0.4504661446061875)
+
+
+20/07/12 13:41:32 INFO FileInputDStream: Cleared 0 old files that were older than 1594561230000 ms:
+20/07/12 13:41:32 INFO FileInputDStream: Cleared 0 old files that were older than 1594561230000 ms:
+20/07/12 13:41:32 INFO ReceivedBlockTracker: Deleting batches:
+20/07/12 13:41:32 INFO InputInfoTracker: remove old batch metadata: 1594561200000 ms
+20/07/12 13:42:00 INFO FileInputDStream: Finding new files took 5 ms
+20/07/12 13:42:00 INFO FileInputDStream: New files at time 1594561320000 ms:
+
+20/07/12 13:42:00 INFO JobScheduler: Added jobs for time 1594561320000 ms
+20/07/12 13:42:00 INFO JobScheduler: Starting job streaming job 1594561320000 ms.0 from job set of time 1594561320000 ms
+-------------------------------------------
+Time: 2020-07-12 13:42:00
+-------------------------------------------
+(u'Cosy_Sock', 1.0)
+(u'Reflecto_Jacket', 1.0)
+(u'Electra_Compass', 1.0)
+(u'Sleepy_Pad', 1.0)
+(u'Trusty_Rope', 1.0)
+(u'Slicky_Tire', 1.0)
+(u'Tiny_Tent', 1.0)
+
+
+20/07/12 13:42:02 INFO JobScheduler: Finished job streaming job 1594561320000 ms.0 from job set of time 1594561320000 ms
+20/07/12 13:42:02 INFO JobScheduler: Total delay: 2.138 s for time 1594561320000 ms (execution: 1.560 s)
+
+
+20/07/12 13:42:02 INFO FileInputDStream: Cleared 0 old files that were older than 1594561260000 ms:
+20/07/12 13:42:02 INFO FileInputDStream: Cleared 0 old files that were older than 1594561260000 ms:
+20/07/12 13:42:02 INFO ReceivedBlockTracker: Deleting batches:
+20/07/12 13:42:02 INFO InputInfoTracker: remove old batch metadata: 1594561230000 ms
+20/07/12 13:42:30 INFO FileInputDStream: Finding new files took 5 ms
+20/07/12 13:42:30 INFO FileInputDStream: New files at time 1594561350000 ms:
+hdfs://ip-172-31-4-215.ec2.internal:8020/user/hadoop/finalproj/product3.csv
+20/07/12 13:42:30 INFO JobScheduler: Added jobs for time 1594561350000 ms
+20/07/12 13:42:30 INFO JobScheduler: Starting job streaming job 1594561350000 ms.0 from job set of time 1594561350000 ms
+-------------------------------------------
+Time: 2020-07-12 13:42:30
+-------------------------------------------
+(u'Electra_Compass', 0.18072289437408307)
+(u'Cosy_Sock', 0.18072289437408307)
+(u'Dura_Boot', 0.2012048239568051)
+(u'Zzz_Bag', 1.0)
+(u'Mmm_Stove', 0.18072289437408307)
+(u'Comfy_Harness', 0.18072289437408307)
+(u'Biggy_Tent', 0.2012048239568051)
+(u'Easy_Boot', 1.0)
+(u'Trusty_Rope', 0.2012048239568051)
+(u'HiTec_GPS', 1.0)
+
+
+20/07/12 13:42:32 INFO JobScheduler: Finished job streaming job 1594561350000 ms.0 from job set of time 1594561350000 ms
+20/07/12 13:42:32 INFO JobScheduler: Total delay: 2.464 s for time 1594561350000 ms (execution: 1.902 s)
+20/07/12 13:42:32 INFO FileInputDStream: Cleared 1 old files that were older than 1594561290000 ms: 1594561260000 ms
+20/07/12 13:42:32 INFO FileInputDStream: Cleared 0 old files that were older than 1594561290000 ms:
+
+
+
+20/07/12 13:42:32 INFO FileInputDStream: Cleared 0 old files that were older than 1594561290000 ms:
+20/07/12 13:42:32 INFO FileInputDStream: Cleared 0 old files that were older than 1594561290000 ms:
+20/07/12 13:42:32 INFO ReceivedBlockTracker: Deleting batches:
+20/07/12 13:42:32 INFO InputInfoTracker: remove old batch metadata: 1594561260000 ms
+20/07/12 13:43:00 INFO FileInputDStream: Finding new files took 4 ms
+20/07/12 13:43:00 INFO FileInputDStream: New files at time 1594561380000 ms:
+
+20/07/12 13:43:00 INFO JobScheduler: Added jobs for time 1594561380000 ms
+20/07/12 13:43:00 INFO JobScheduler: Starting job streaming job 1594561380000 ms.0 from job set of time 1594561380000 ms
+-------------------------------------------
+Time: 2020-07-12 13:43:00
+-------------------------------------------
+(u'Electra_Compass', 0.34113054846090446)
+(u'Sleepy_Pad', 0.34113054846090446)
+(u'Cosy_Sock', 0.34113054846090446)
+(u'Strongster_Carribeaner', 0.6671834412835845)
+(u'Mmm_Stove', 0.4423481253103736)
+(u'Reflecto_Jacket', 0.43526625727013313)
+(u'Biggy_Tent', 0.7054339663676279)
+(u'Trusty_Rope', 0.43526625727013313)
+(u'HiTec_GPS', 0.5329104363746037)
+(u'Action_Sandal', 0.5249152685801747)
+
+20/07/12 13:43:02 INFO JobScheduler: Finished job streaming job 1594561380000 ms.0 from job set of time 1594561380000 ms
+20/07/12 13:43:02 INFO JobScheduler: Total delay: 2.096 s for time 1594561380000 ms (execution: 1.540 s)
+
+
+
+20/07/12 13:43:02 INFO FileInputDStream: Cleared 0 old files that were older than 1594561320000 ms:
+20/07/12 13:43:02 INFO FileInputDStream: Cleared 0 old files that were older than 1594561320000 ms:
+20/07/12 13:43:02 INFO ReceivedBlockTracker: Deleting batches:
+20/07/12 13:43:02 INFO InputInfoTracker: remove old batch metadata: 1594561290000 ms
+20/07/12 13:43:30 INFO FileInputDStream: Finding new files took 5 ms
+20/07/12 13:43:30 INFO FileInputDStream: New files at time 1594561410000 ms:
+hdfs://ip-172-31-4-215.ec2.internal:8020/user/hadoop/finalproj/product4.csv
+20/07/12 13:43:30 INFO JobScheduler: Added jobs for time 1594561410000 ms
+20/07/12 13:43:30 INFO JobScheduler: Starting job streaming job 1594561410000 ms.0 from job set of time 1594561410000 ms
+-------------------------------------------
+Time: 2020-07-12 13:43:30
+-------------------------------------------
+
+20/07/12 13:43:32 INFO JobScheduler: Finished job streaming job 1594561410000 ms.0 from job set of time 1594561410000 ms
+20/07/12 13:43:32 INFO JobScheduler: Total delay: 2.452 s for time 1594561410000 ms (execution: 1.868 s)
+20/07/12 13:43:32 INFO FileInputDStream: Cleared 1 old files that were older than 1594561350000 ms: 1594561320000 ms
